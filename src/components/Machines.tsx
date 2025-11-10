@@ -1,5 +1,8 @@
 import millStandard from "@/assets/mill-standard.png";
 import sodickMill from "@/assets/sodick-mill.png";
+import edmMachine from "@/assets/edm-machine.png";
+import latheMachine from "@/assets/lathe-machine.png";
+import grinderMachine from "@/assets/grinder-machine.png";
 
 const Machines = () => {
   return (
@@ -172,6 +175,195 @@ const Machines = () => {
                     <p className="text-2xl font-bold text-primary">0</p>
                     <p className="text-xs text-muted-foreground">Backlash</p>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CNC EDM Machines */}
+        <div className="mb-20 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="text-center mb-8">
+            <h3 className="text-4xl font-extrabold text-primary mb-3">CNC EDM Machines</h3>
+            <p className="text-lg text-foreground/85 max-w-3xl mx-auto">
+              Precision EDM (Electrical Discharge Machining) capabilities for intricate geometries, ultra-tight tolerances, and hardened materials.
+            </p>
+            <div className="w-20 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-3" />
+          </div>
+
+          <div className="bg-gradient-to-br from-black/50 to-black/30 p-8 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)]">
+            <div className="flex flex-col lg:flex-row gap-8 items-center">
+              <div className="lg:w-1/3">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                  <div className="relative bg-black/40 p-6 rounded-xl border border-primary/20">
+                    <img 
+                      src={edmMachine} 
+                      alt="CNC EDM Machine" 
+                      className="w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:w-2/3">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left">
+                    <thead>
+                      <tr className="border-b border-primary/30">
+                        <th className="py-3 px-4 text-primary font-bold">Model</th>
+                        <th className="py-3 px-4 text-primary font-bold">Type</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-primary/20">
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">(5) Sodick AQ300L</td>
+                        <td className="py-3 px-4 text-foreground/80">Wire EDM</td>
+                      </tr>
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">(5) Sodick AG40L</td>
+                        <td className="py-3 px-4 text-foreground/80">Sinker EDM</td>
+                      </tr>
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">Mitsubishi V55FS</td>
+                        <td className="py-3 px-4 text-foreground/80">Sinker EDM</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Manual Lathe & Milling Equipment */}
+        <div className="mb-20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <div className="text-center mb-8">
+            <h3 className="text-4xl font-extrabold text-primary mb-3">Manual Lathe & Milling Equipment</h3>
+            <p className="text-lg text-foreground/85 max-w-3xl mx-auto">
+              CNC and manual equipment for turning, threading, milling, jig fabrication, and support tooling.
+            </p>
+            <div className="w-20 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-3" />
+          </div>
+
+          <div className="bg-gradient-to-br from-black/50 to-black/30 p-8 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)]">
+            <div className="flex flex-col lg:flex-row gap-8 items-center">
+              <div className="lg:w-1/3">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                  <div className="relative bg-black/40 p-6 rounded-xl border border-primary/20">
+                    <img 
+                      src={latheMachine} 
+                      alt="Lathe Machine" 
+                      className="w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:w-2/3">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left">
+                    <thead>
+                      <tr className="border-b border-primary/30">
+                        <th className="py-3 px-4 text-primary font-bold">Model</th>
+                        <th className="py-3 px-4 text-primary font-bold">Type</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-primary/20">
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">(6) Takamatsu EM-2A</td>
+                        <td className="py-3 px-4 text-foreground/80">CNC Lathe</td>
+                      </tr>
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">(6) Takisawa TC-20</td>
+                        <td className="py-3 px-4 text-foreground/80">CNC Lathe</td>
+                      </tr>
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">Okuma Cadet</td>
+                        <td className="py-3 px-4 text-foreground/80">CNC Lathe</td>
+                      </tr>
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">(2) Bridgeport</td>
+                        <td className="py-3 px-4 text-foreground/80">Manual Mill</td>
+                      </tr>
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">(3) Mori Seiki MS850G</td>
+                        <td className="py-3 px-4 text-foreground/80">Manual Lathe</td>
+                      </tr>
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">Webb GX60</td>
+                        <td className="py-3 px-4 text-foreground/80">Manual Lathe</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Grinding Equipment */}
+        <div className="animate-fade-in" style={{ animationDelay: '0.5s' }}>
+          <div className="text-center mb-8">
+            <h3 className="text-4xl font-extrabold text-primary mb-3">Grinding Equipment</h3>
+            <p className="text-lg text-foreground/85 max-w-3xl mx-auto">
+              Dedicated stations for OD grinding, surface grinding, and tool sharpening to ensure high-tolerance finishing and edge preparation.
+            </p>
+            <div className="w-20 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-3" />
+          </div>
+
+          <div className="bg-gradient-to-br from-black/50 to-black/30 p-8 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)]">
+            <div className="flex flex-col lg:flex-row gap-8 items-center">
+              <div className="lg:w-1/3">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500" />
+                  <div className="relative bg-black/40 p-6 rounded-xl border border-primary/20">
+                    <img 
+                      src={grinderMachine} 
+                      alt="Grinding Machine" 
+                      className="w-full h-auto transform group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:w-2/3">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left">
+                    <thead>
+                      <tr className="border-b border-primary/30">
+                        <th className="py-3 px-4 text-primary font-bold">Model</th>
+                        <th className="py-3 px-4 text-primary font-bold">Type</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-primary/20">
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">Yuasa</td>
+                        <td className="py-3 px-4 text-foreground/80">Tool Grinder</td>
+                      </tr>
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">Gorton</td>
+                        <td className="py-3 px-4 text-foreground/80">Tool Grinder</td>
+                      </tr>
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">Cutter Master</td>
+                        <td className="py-3 px-4 text-foreground/80">Tool Grinder</td>
+                      </tr>
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">(2) MHT</td>
+                        <td className="py-3 px-4 text-foreground/80">Surface Grinder</td>
+                      </tr>
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">(3) Kent</td>
+                        <td className="py-3 px-4 text-foreground/80">Surface Grinder</td>
+                      </tr>
+                      <tr className="hover:bg-primary/5 transition-colors">
+                        <td className="py-3 px-4 text-foreground/90">Myford OD Grinder</td>
+                        <td className="py-3 px-4 text-foreground/80">OD Grinder</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
