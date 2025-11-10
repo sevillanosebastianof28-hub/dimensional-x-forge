@@ -1,7 +1,17 @@
 import CNCParts3D from "./CNCParts3D";
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return <main id="hero" className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
       {/* Animated Grid Background */}
       <div className="absolute inset-0 opacity-20 z-[1] animate-pulse" style={{
@@ -46,6 +56,7 @@ const Hero = () => {
             <div className="flex gap-4 animate-scale-in" style={{ animationDelay: '0.4s' }}>
               <Button 
                 size="lg" 
+                onClick={() => navigate("/request-quote")}
                 className="px-8 py-6 text-base font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_rgba(0,255,255,0.4)] hover:shadow-[0_0_40px_rgba(0,255,255,0.7)] transition-all duration-300 hover:scale-110 relative overflow-hidden group"
               >
                 <span className="relative z-10">Request a Quote</span>
@@ -54,9 +65,10 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline"
+                onClick={() => scrollToSection('machines')}
                 className="px-8 py-6 text-base font-bold border-2 border-primary/60 bg-transparent text-primary hover:bg-primary/20 hover:border-primary hover:scale-110 transition-all duration-300 relative overflow-hidden group"
               >
-                <span className="relative z-10">View Portfolio</span>
+                <span className="relative z-10">View Machines</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
               </Button>
             </div>
