@@ -10,46 +10,47 @@ const LogoHero = () => {
             className="w-full h-full relative animate-[spin_8s_linear_infinite]"
             style={{
               transformStyle: 'preserve-3d',
+              transform: 'rotateX(-20deg) rotateY(-25deg)',
             }}
           >
             {/* Front face - Green */}
             <div 
-              className="absolute w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 border border-green-300/30"
+              className="absolute w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 border border-green-300/50 shadow-lg"
               style={{
                 transform: 'translateZ(40px)',
               }}
             />
-            {/* Back face - Green */}
+            {/* Back face - Green darker */}
             <div 
-              className="absolute w-20 h-20 bg-gradient-to-br from-green-500 to-green-700 border border-green-300/30"
+              className="absolute w-20 h-20 bg-gradient-to-br from-green-600 to-green-800 border border-green-400/30"
               style={{
                 transform: 'translateZ(-40px) rotateY(180deg)',
               }}
             />
-            {/* Left face - Blue */}
-            <div 
-              className="absolute w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 border border-blue-300/30"
-              style={{
-                transform: 'rotateY(-90deg) translateZ(40px)',
-              }}
-            />
             {/* Right face - Blue */}
             <div 
-              className="absolute w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-700 border border-blue-300/30"
+              className="absolute w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 border border-blue-300/50 shadow-lg"
               style={{
                 transform: 'rotateY(90deg) translateZ(40px)',
               }}
             />
+            {/* Left face - Blue darker */}
+            <div 
+              className="absolute w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-800 border border-blue-400/30"
+              style={{
+                transform: 'rotateY(-90deg) translateZ(40px)',
+              }}
+            />
             {/* Top face - Red */}
             <div 
-              className="absolute w-20 h-20 bg-gradient-to-br from-red-400 to-red-600 border border-red-300/30"
+              className="absolute w-20 h-20 bg-gradient-to-br from-red-400 to-red-600 border border-red-300/50 shadow-lg"
               style={{
                 transform: 'rotateX(90deg) translateZ(40px)',
               }}
             />
-            {/* Bottom face - Red */}
+            {/* Bottom face - Red darker */}
             <div 
-              className="absolute w-20 h-20 bg-gradient-to-br from-red-500 to-red-700 border border-red-300/30"
+              className="absolute w-20 h-20 bg-gradient-to-br from-red-600 to-red-800 border border-red-400/30"
               style={{
                 transform: 'rotateX(-90deg) translateZ(40px)',
               }}
