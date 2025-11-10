@@ -58,22 +58,6 @@ const Hero = () => {
                 View Portfolio
               </Button>
             </div>
-
-            {/* Feature highlights */}
-            <div className="mt-10 flex gap-8 text-sm animate-fade-in" style={{ animationDelay: '0.5s' }}>
-              <div className="flex flex-col">
-                <span className="text-3xl font-bold text-primary">±0.001"</span>
-                <span className="text-muted-foreground">Tolerance</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-3xl font-bold text-primary">24/7</span>
-                <span className="text-muted-foreground">Production</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-3xl font-bold text-primary">5-Axis</span>
-                <span className="text-muted-foreground">CNC Mills</span>
-              </div>
-            </div>
           </div>
 
           {/* 3D Visualization with Labels */}
@@ -108,18 +92,14 @@ const Hero = () => {
             </div>
             
             {/* Tech specs below 3D view */}
-            <div className="mt-4 w-full grid grid-cols-3 gap-3 text-center">
-              <div className="bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-primary/20">
-                <p className="text-xs text-muted-foreground">Materials</p>
-                <p className="text-sm font-bold text-primary">All Metals</p>
+            <div className="mt-4 w-full grid grid-cols-2 gap-3 text-center">
+              <div className="bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105">
+                <p className="text-xs text-muted-foreground">Precision</p>
+                <p className="text-sm font-bold text-primary">High-Tolerance</p>
               </div>
-              <div className="bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-primary/20">
-                <p className="text-xs text-muted-foreground">Max Size</p>
-                <p className="text-sm font-bold text-primary">48" x 36"</p>
-              </div>
-              <div className="bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-primary/20">
-                <p className="text-xs text-muted-foreground">Lead Time</p>
-                <p className="text-sm font-bold text-primary">2-5 Days</p>
+              <div className="bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105">
+                <p className="text-xs text-muted-foreground">Production</p>
+                <p className="text-sm font-bold text-primary">Mission-Critical</p>
               </div>
             </div>
           </div>
