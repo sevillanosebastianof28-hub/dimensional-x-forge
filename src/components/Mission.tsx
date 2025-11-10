@@ -1,4 +1,4 @@
-import cncParts from "@/assets/cnc-parts-3d.png";
+import MissionParts3D from "./MissionParts3D";
 
 const Mission = () => {
   return (
@@ -33,17 +33,28 @@ const Mission = () => {
               {/* Glow effect behind image */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
               
-              <div className="relative bg-gradient-to-br from-black/60 to-black/40 p-8 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.2)] group-hover:shadow-[0_0_50px_rgba(0,255,255,0.4)] transition-all duration-500">
-                <img 
-                  src={cncParts} 
-                  alt="CNC Parts Assembly" 
-                  className="w-full h-auto rounded-xl shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
-                />
+              <div className="relative bg-gradient-to-br from-black/60 to-black/40 p-6 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.2)] group-hover:shadow-[0_0_50px_rgba(0,255,255,0.4)] transition-all duration-500 h-[500px]">
+                <MissionParts3D />
                 
-                {/* Overlay badge */}
-                <div className="absolute top-12 right-12 bg-black/80 backdrop-blur-md px-6 py-3 rounded-lg border border-primary/50 shadow-[0_0_20px_rgba(0,255,255,0.3)]">
-                  <p className="text-xs text-muted-foreground mb-1">Precision Grade</p>
-                  <p className="text-2xl font-bold text-primary">±0.001"</p>
+                {/* Overlay labels */}
+                <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-4 py-2 rounded-lg border border-primary/50 z-10">
+                  <p className="text-xs text-muted-foreground mb-1">Complex Assembly</p>
+                  <p className="text-sm font-bold text-primary">Mission-Critical Parts</p>
+                </div>
+                
+                <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                  <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                    Precision Valve
+                  </div>
+                  <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                    Turbine Wheel
+                  </div>
+                  <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                    Hydraulic Cylinder
+                  </div>
+                  <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                    Connector Plate
+                  </div>
                 </div>
               </div>
             </div>
