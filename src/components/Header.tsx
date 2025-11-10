@@ -44,7 +44,10 @@ const Header = () => {
               <div className="absolute w-full h-full bg-gradient-to-br from-primary/30 to-primary/10 border border-primary/40 backdrop-blur-sm" style={{ transform: 'rotateX(-90deg) translateZ(20px)' }} />
             </div>
           </div>
-          <div className="text-2xl font-extrabold text-foreground">DimensionalX</div>
+          <div>
+            <div className="text-2xl font-extrabold text-foreground">DimensionalX</div>
+            <div className="text-xs text-primary font-semibold tracking-wider">your prototype partner</div>
+          </div>
         </div>
         
         <nav className="hidden md:flex items-center gap-2.5">
