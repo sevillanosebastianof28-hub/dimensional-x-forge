@@ -1,40 +1,126 @@
 import CNCParts3D from "./CNCParts3D";
+import { Button } from "./ui/button";
 
 const Hero = () => {
-  return <main className="relative py-16 px-0 overflow-hidden max-w-[1360px] mx-auto">
-      {/* Grid Background */}
-      <div className="absolute inset-0 opacity-20 z-[1]" style={{
+  return <main className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
+      {/* Animated Grid Background */}
+      <div className="absolute inset-0 opacity-20 z-[1] animate-pulse" style={{
       backgroundImage: `repeating-linear-gradient(0deg, hsl(var(--grid-color)) 0, hsl(var(--grid-color)) 1px, transparent 1px, transparent 30px),
                            repeating-linear-gradient(90deg, hsl(var(--grid-color)) 0, hsl(var(--grid-color)) 1px, transparent 1px, transparent 30px)`,
       backgroundSize: '30px 30px'
     }} />
 
-      {/* Glowing Content Box */}
-      <div className="relative z-[2] py-16 px-[70px] bg-black/40 rounded-[20px] border border-primary shadow-[0_0_25px_rgba(0,255,255,0.5),0_0_50px_rgba(0,255,255,0.2)]">
-        <div className="flex justify-between items-center gap-12">
+      {/* Radial gradient overlay for depth */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+      
+      {/* Glowing orbs for ambiance */}
+      <div className="absolute top-20 -left-20 w-64 h-64 bg-primary/20 rounded-full blur-[100px] z-[1] animate-pulse" />
+      <div className="absolute bottom-20 -right-20 w-80 h-80 bg-accent/15 rounded-full blur-[120px] z-[1] animate-pulse" style={{ animationDelay: '1s' }} />
+
+      {/* Main Content Container */}
+      <div className="relative z-[2] py-12 px-[70px] bg-gradient-to-br from-black/60 via-black/50 to-black/40 rounded-[24px] border border-primary/40 shadow-[0_0_40px_rgba(0,255,255,0.3),0_0_80px_rgba(0,255,255,0.1)] backdrop-blur-sm">
+        <div className="flex justify-between items-center gap-16">
           {/* Text Block */}
-          <div className="flex-[0_0_50%] max-w-[500px]">
-            <h1 className="text-[4.5rem] font-extrabold leading-[1.1] m-0 text-shadow-[0_0_10px_rgba(255,255,255,0.1)]">
-              Precision.
-            </h1>
-            <h1 className="text-[4.5rem] font-extrabold leading-[1.1] m-0 text-shadow-[0_0_10px_rgba(255,255,255,0.1)]">
-              Performance.
-            </h1>
-            <h1 className="text-[4.5rem] font-extrabold leading-[1.1] m-0 text-shadow-[0_0_10px_rgba(255,255,255,0.1)]">
-              Perfection.
-            </h1>
-            <p className="text-lg text-muted-foreground my-6 mb-10 leading-relaxed max-w-[450px]">
-              Dimensional X delivers end-to-end CNC manufacturing solutions — from concept to production — with digital precision and refined project visibility.
-            </p>
-            <a href="#" className="inline-block px-9 py-4 text-primary bg-transparent border-2 border-primary font-bold rounded-md transition-all shadow-[0_0_10px_rgba(0,255,255,0.5)] hover:bg-primary hover:text-background hover:shadow-[0_0_25px_rgba(0,255,255,1)] no-underline">
-              Request a Quote
-            </a>
+          <div className="flex-[0_0_48%] max-w-[550px]">
+            <div className="mb-8">
+              <h1 className="text-[5rem] font-extrabold leading-[0.95] m-0 bg-gradient-to-r from-foreground via-primary/90 to-foreground bg-clip-text text-transparent animate-fade-in">
+                Precision.
+              </h1>
+              <h1 className="text-[5rem] font-extrabold leading-[0.95] m-0 bg-gradient-to-r from-foreground via-accent/90 to-foreground bg-clip-text text-transparent animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                Performance.
+              </h1>
+              <h1 className="text-[5rem] font-extrabold leading-[0.95] m-0 bg-gradient-to-r from-foreground via-primary/90 to-foreground bg-clip-text text-transparent animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                Perfection.
+              </h1>
+            </div>
+            
+            <div className="mb-8 space-y-3 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <p className="text-xl text-foreground/90 leading-relaxed font-medium">
+                Dimensional X delivers end-to-end CNC manufacturing solutions — from concept to production.
+              </p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Experience digital precision, refined project visibility, and industry-leading quality standards.
+              </p>
+            </div>
+            
+            <div className="flex gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <Button 
+                size="lg" 
+                className="px-8 py-6 text-base font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_rgba(0,255,255,0.4)] hover:shadow-[0_0_30px_rgba(0,255,255,0.6)] transition-all duration-300 hover:scale-105"
+              >
+                Request a Quote
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="px-8 py-6 text-base font-bold border-2 border-primary/60 bg-transparent text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300"
+              >
+                View Portfolio
+              </Button>
+            </div>
+
+            {/* Feature highlights */}
+            <div className="mt-10 flex gap-8 text-sm animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <div className="flex flex-col">
+                <span className="text-3xl font-bold text-primary">±0.001"</span>
+                <span className="text-muted-foreground">Tolerance</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-3xl font-bold text-primary">24/7</span>
+                <span className="text-muted-foreground">Production</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-3xl font-bold text-primary">5-Axis</span>
+                <span className="text-muted-foreground">CNC Mills</span>
+              </div>
+            </div>
           </div>
 
-          {/* 3D CNC Parts Visualization */}
-          <div className="flex-[0_0_50%] flex justify-center items-center relative">
-            <div className="w-full h-[500px]">
+          {/* 3D Visualization with Labels */}
+          <div className="flex-[0_0_48%] flex flex-col justify-center items-center relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="w-full h-[550px] relative rounded-xl overflow-hidden border border-primary/30 bg-black/20 shadow-[inset_0_0_30px_rgba(0,255,255,0.1)]">
               <CNCParts3D />
+              
+              {/* Overlay label */}
+              <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-lg border border-primary/40 z-10">
+                <p className="text-xs text-muted-foreground mb-1">Interactive 3D View</p>
+                <p className="text-sm font-bold text-primary">Click & Drag to Rotate</p>
+              </div>
+              
+              {/* Part labels */}
+              <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
+                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                  Precision Gears
+                </div>
+                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                  CNC Shaft
+                </div>
+                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                  Engine Block
+                </div>
+                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                  Ball Bearings
+                </div>
+                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                  Cutting Tools
+                </div>
+              </div>
+            </div>
+            
+            {/* Tech specs below 3D view */}
+            <div className="mt-4 w-full grid grid-cols-3 gap-3 text-center">
+              <div className="bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-primary/20">
+                <p className="text-xs text-muted-foreground">Materials</p>
+                <p className="text-sm font-bold text-primary">All Metals</p>
+              </div>
+              <div className="bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-primary/20">
+                <p className="text-xs text-muted-foreground">Max Size</p>
+                <p className="text-sm font-bold text-primary">48" x 36"</p>
+              </div>
+              <div className="bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-primary/20">
+                <p className="text-xs text-muted-foreground">Lead Time</p>
+                <p className="text-sm font-bold text-primary">2-5 Days</p>
+              </div>
             </div>
           </div>
         </div>

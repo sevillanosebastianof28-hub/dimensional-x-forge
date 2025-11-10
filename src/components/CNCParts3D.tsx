@@ -360,23 +360,23 @@ const PrecisionTool = ({ position }: { position: [number, number, number] }) => 
 const Scene = () => {
   return (
     <>
-      <PerspectiveCamera makeDefault position={[6, 4, 6]} fov={40} />
+      <PerspectiveCamera makeDefault position={[7, 4.5, 7]} fov={35} />
       <OrbitControls
         enableZoom={true}
         enablePan={false}
-        minDistance={5}
-        maxDistance={14}
+        minDistance={6}
+        maxDistance={12}
         autoRotate
-        autoRotateSpeed={1.2}
-        maxPolarAngle={Math.PI / 1.8}
-        minPolarAngle={Math.PI / 4}
+        autoRotateSpeed={0.8}
+        maxPolarAngle={Math.PI / 1.9}
+        minPolarAngle={Math.PI / 4.5}
       />
       
       {/* Advanced lighting setup */}
-      <ambientLight intensity={0.25} />
+      <ambientLight intensity={0.4} />
       <directionalLight 
-        position={[12, 12, 8]} 
-        intensity={1.8} 
+        position={[10, 10, 6]} 
+        intensity={2} 
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
@@ -386,28 +386,28 @@ const Scene = () => {
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
       />
-      <directionalLight position={[-8, -8, -5]} intensity={0.6} />
-      <directionalLight position={[5, -5, 8]} intensity={0.4} />
+      <directionalLight position={[-8, -6, -4]} intensity={0.8} />
+      <directionalLight position={[4, -4, 6]} intensity={0.6} />
       
       {/* Accent lights for metal shine */}
-      <pointLight position={[3, 6, 3]} intensity={1.2} color="#00ddff" />
-      <pointLight position={[-3, 4, -3]} intensity={0.8} color="#0088ff" />
+      <pointLight position={[4, 7, 4]} intensity={1.5} color="#00ddff" />
+      <pointLight position={[-4, 5, -4]} intensity={1} color="#0099ff" />
       <spotLight 
-        position={[0, 8, 0]} 
-        intensity={0.6} 
-        angle={0.6} 
-        penumbra={0.5}
+        position={[0, 10, 0]} 
+        intensity={0.8} 
+        angle={0.5} 
+        penumbra={0.4}
         color="#00ffff"
       />
       
       <Environment preset="city" />
       
-      {/* CNC Parts arranged in a professional layout */}
-      <CNCGear position={[-2.2, 0.2, 0]} />
-      <CNCShaft position={[1.8, 0.6, 0.3]} />
-      <CNCBlock position={[0.2, -0.7, 1.8]} />
-      <CNCBearing position={[-1.2, 1.3, -1.6]} />
-      <PrecisionTool position={[2.2, -0.5, -1.4]} />
+      {/* CNC Parts arranged in a clear, visible layout */}
+      <CNCGear position={[-2.5, 0.5, -0.5]} />
+      <CNCShaft position={[2, 0.8, 0.5]} />
+      <CNCBlock position={[0, -1, 2]} />
+      <CNCBearing position={[-1.5, 1.5, -2]} />
+      <PrecisionTool position={[2.5, -0.8, -1.8]} />
     </>
   );
 };
