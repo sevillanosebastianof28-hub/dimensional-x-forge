@@ -1,43 +1,44 @@
+import { Canvas } from "@react-three/fiber";
 import { Button } from "@/components/ui/button";
-import cncPart from "@/assets/cnc-part.jpg";
+import Scene3D from "@/components/Scene3D";
 
 const Hero = () => {
   return (
-    <div className="relative flex-1 flex items-center justify-center">
-      {/* Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(hsl(var(--grid-color))_1px,transparent_1px),linear-gradient(90deg,hsl(var(--grid-color))_1px,transparent_1px)] bg-[size:40px_40px] opacity-40"></div>
+    <section className="relative w-full h-screen bg-[#050607] overflow-hidden flex items-center justify-center">
+      {/* Background Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(#0a0d12_1px,transparent_1px),linear-gradient(90deg,#0a0d12_1px,transparent_1px)] bg-[size:40px_40px] opacity-40"></div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between px-6 md:px-20 py-16 w-full max-w-7xl gap-10">
-        {/* Content Box */}
-        <div className="relative border border-primary/70 rounded-3xl shadow-[0_0_25px_rgba(0,255,255,0.3)] p-8 md:p-16 backdrop-blur-sm bg-background/80 md:w-[55%] hover:shadow-[0_0_40px_rgba(0,255,255,0.5)] transition-shadow duration-300">
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-            Precision.<br />
-            Performance.<br />
-            <span className="text-primary">Perfection.</span>
-          </h1>
-          <p className="text-muted-foreground text-base md:text-lg mt-5 mb-8 leading-relaxed">
-            Dimensional X delivers end-to-end CNC manufacturing solutions — from concept to production — with digital precision and refined project visibility.
-          </p>
-          <Button 
-            size="lg"
-            className="bg-primary text-primary-foreground px-8 py-3 font-semibold shadow-[0_0_15px_rgba(0,255,255,0.5)] hover:shadow-[0_0_30px_rgba(0,255,255,0.8)] transition-all"
-          >
-            Request a Quote
-          </Button>
-        </div>
+      {/* Neon Frame */}
+      <div className="absolute inset-4 md:inset-10 border border-primary/60 rounded-3xl shadow-[0_0_25px_rgba(0,255,255,0.5)]"></div>
 
-        {/* Floating 3D Part */}
-        <div className="relative w-[300px] h-[300px] md:w-[380px] md:h-[380px]">
-          <img 
-            src={cncPart}
-            alt="CNC Precision Part" 
-            className="w-full h-full object-contain animate-spin3d opacity-90 drop-shadow-[0_0_20px_rgba(0,255,255,0.4)]"
-            style={{ transformStyle: 'preserve-3d' }}
-          />
-        </div>
+      {/* 3D Scene */}
+      <div className="absolute inset-0">
+        <Canvas
+          camera={{ position: [0, 0, 10], fov: 60 }}
+          gl={{ alpha: true, antialias: true }}
+        >
+          <Scene3D />
+        </Canvas>
       </div>
-    </div>
+
+      {/* Overlay Content */}
+      <div className="relative z-10 max-w-3xl px-8 md:px-16 text-left">
+        <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+          Precision.<br />
+          Performance.<br />
+          <span className="text-primary">Perfection.</span>
+        </h1>
+        <p className="text-muted-foreground max-w-md mb-8 leading-relaxed">
+          Dimensional X delivers end-to-end CNC manufacturing solutions — from concept to production — with digital precision and refined project visibility.
+        </p>
+        <Button 
+          size="lg"
+          className="bg-primary text-primary-foreground px-8 py-3 font-semibold shadow-[0_0_20px_rgba(0,255,255,0.6)] hover:shadow-[0_0_35px_rgba(0,255,255,0.9)] transition-all"
+        >
+          Request a Quote
+        </Button>
+      </div>
+    </section>
   );
 };
 
