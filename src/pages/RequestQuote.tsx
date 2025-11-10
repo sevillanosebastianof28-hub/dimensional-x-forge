@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import { z } from "zod";
+import { Upload, X } from "lucide-react";
 
 const quoteSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -28,6 +29,7 @@ const RequestQuote = () => {
     quantity: "",
     timeline: "",
   });
+  const [files, setFiles] = useState<File[]>([]);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -40,6 +42,44 @@ const RequestQuote = () => {
     }
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFiles = Array.from(e.target.files || []);
+    const maxSize = 20 * 1024 * 1024; // 20MB per file
+    const maxFiles = 10;
+    
+    // Validate file sizes
+    const oversizedFiles = selectedFiles.filter(file => file.size > maxSize);
+    if (oversizedFiles.length > 0) {
+      toast.error(`Some files exceed 20MB limit: ${oversizedFiles.map(f => f.name).join(', ')}`);
+      return;
+    }
+    
+    // Validate total number of files
+    if (files.length + selectedFiles.length > maxFiles) {
+      toast.error(`Maximum ${maxFiles} files allowed`);
+      return;
+    }
+    
+    setFiles(prev => [...prev, ...selectedFiles]);
+    toast.success(`${selectedFiles.length} file(s) added`);
+    
+    // Reset input
+    e.target.value = '';
+  };
+
+  const removeFile = (index: number) => {
+    setFiles(prev => prev.filter((_, i) => i !== index));
+    toast.success('File removed');
+  };
+
+  const formatFileSize = (bytes: number): string => {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -49,9 +89,10 @@ const RequestQuote = () => {
       // Validate form data
       const validatedData = quoteSchema.parse(formData);
       
-      // Here you would typically send the data to your backend
+      // Here you would typically send the data and files to your backend
       // For now, we'll just show a success message
-      toast.success("Quote request submitted successfully! We'll get back to you soon.");
+      const fileNames = files.map(f => f.name).join(', ');
+      toast.success(`Quote request submitted successfully!${files.length > 0 ? ` Files: ${fileNames}` : ''} We'll get back to you soon.`);
       
       // Reset form
       setFormData({
@@ -63,6 +104,7 @@ const RequestQuote = () => {
         quantity: "",
         timeline: "",
       });
+      setFiles([]);
       
       // Redirect back to home after a short delay
       setTimeout(() => {
@@ -211,6 +253,68 @@ const RequestQuote = () => {
                   className="mt-2 bg-background/50 border-primary/30 text-foreground"
                   placeholder="e.g., 2-3 weeks"
                 />
+              </div>
+            </div>
+
+            <div>
+              <Label htmlFor="files" className="text-foreground">
+                Attach CAD Files / Drawings
+              </Label>
+              <div className="mt-2">
+                <div className="flex items-center justify-center w-full">
+                  <label 
+                    htmlFor="files" 
+                    className="flex flex-col items-center justify-center w-full h-32 border-2 border-primary/30 border-dashed rounded-lg cursor-pointer bg-background/50 hover:bg-background/70 hover:border-primary/60 transition-all duration-300"
+                  >
+                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                      <Upload className="w-8 h-8 mb-2 text-primary" />
+                      <p className="mb-2 text-sm text-foreground">
+                        <span className="font-semibold">Click to upload</span> or drag and drop
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        STEP, STL, DWG, DXF, IGES, PDF (max 20MB per file, up to 10 files)
+                      </p>
+                    </div>
+                    <input 
+                      id="files" 
+                      type="file" 
+                      className="hidden" 
+                      multiple
+                      onChange={handleFileChange}
+                      accept=".step,.stp,.stl,.dwg,.dxf,.iges,.igs,.pdf,.jpg,.jpeg,.png"
+                    />
+                  </label>
+                </div>
+                
+                {files.length > 0 && (
+                  <div className="mt-4 space-y-2">
+                    <p className="text-sm font-medium text-foreground">
+                      Attached Files ({files.length}):
+                    </p>
+                    {files.map((file, index) => (
+                      <div 
+                        key={index}
+                        className="flex items-center justify-between p-3 bg-background/50 border border-primary/20 rounded-lg group hover:border-primary/40 transition-all"
+                      >
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-medium text-foreground truncate">
+                            {file.name}
+                          </p>
+                          <p className="text-xs text-muted-foreground">
+                            {formatFileSize(file.size)}
+                          </p>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => removeFile(index)}
+                          className="ml-4 p-1 text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded transition-colors"
+                        >
+                          <X className="w-4 h-4" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
 
