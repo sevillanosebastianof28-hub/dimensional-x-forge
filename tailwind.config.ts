@@ -80,10 +80,20 @@ export default {
             height: "0",
           },
         },
+        "spin3d": {
+          "0%": { transform: "rotateY(0deg) rotateX(10deg)" },
+          "100%": { transform: "rotateY(360deg) rotateX(10deg)" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { boxShadow: "0 0 25px rgba(0, 255, 255, 0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(0, 255, 255, 0.6)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "spin3d": "spin3d 18s linear infinite",
+        "glow-pulse": "glow-pulse 3s ease-in-out infinite",
       },
     },
   },
