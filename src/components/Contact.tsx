@@ -121,8 +121,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground mb-1">Phone</h4>
-                  <a href="tel:+16155551234" className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                    +1 (615) 555-1234
+                  <a href="tel:+16156598546" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                    (615) 659-8546
                   </a>
                 </div>
               </div>
@@ -134,8 +134,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground mb-1">Email</h4>
-                  <a href="mailto:info@dimensionalx.com" className="text-muted-foreground text-sm hover:text-primary transition-colors">
-                    info@dimensionalx.com
+                  <a href="mailto:Sales@DimensionalX.us" className="text-muted-foreground text-sm hover:text-primary transition-colors">
+                    Sales@DimensionalX.us
                   </a>
                 </div>
               </div>
