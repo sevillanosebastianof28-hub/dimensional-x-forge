@@ -23,13 +23,13 @@ const Header = () => {
   return (
     <header className={`flex justify-between items-center py-5 px-4 border-b border-border sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${scrolled ? 'bg-background/98 shadow-[0_0_30px_rgba(0,255,255,0.2)]' : 'bg-background/95'}`}>
       <div className="flex items-center gap-4 max-w-[1360px] mx-auto w-full">
-        <div className="flex items-center gap-2 flex-1">
+        <div className="flex items-center gap-1 flex-1">
           {/* Rotating Cube from Logo */}
-          <div className="relative h-16 w-16 overflow-visible flex items-center justify-center">
+          <div className="relative h-20 w-20 overflow-visible flex items-center justify-center flex-shrink-0">
             <img 
               src={logo} 
               alt="DimensionalX Cube" 
-              className="h-16 w-auto object-contain animate-spin3d"
+              className="h-24 w-auto object-contain animate-spin3d"
               style={{
                 clipPath: 'inset(0 85% 0 0)',
               }}
@@ -40,7 +40,7 @@ const Header = () => {
           <img 
             src={logo} 
             alt="DimensionalX - Your Prototype Partner" 
-            className="h-14 w-auto object-contain"
+            className="h-16 w-auto object-contain ml-[-10px]"
             style={{
               clipPath: 'inset(0 0 0 15%)'
             }}
