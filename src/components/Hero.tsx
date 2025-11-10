@@ -2,7 +2,7 @@ import CNCParts3D from "./CNCParts3D";
 import { Button } from "./ui/button";
 
 const Hero = () => {
-  return <main className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
+  return <main id="hero" className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
       {/* Animated Grid Background */}
       <div className="absolute inset-0 opacity-20 z-[1] animate-pulse" style={{
       backgroundImage: `repeating-linear-gradient(0deg, hsl(var(--grid-color)) 0, hsl(var(--grid-color)) 1px, transparent 1px, transparent 30px),

@@ -6,7 +6,7 @@ import grinderMachine from "@/assets/grinder-machine.png";
 
 const Machines = () => {
   return (
-    <section className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
+    <section id="machines" className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
       {/* Background effects */}
       <div className="absolute inset-0 opacity-10" style={{
         backgroundImage: `repeating-linear-gradient(45deg, hsl(var(--primary)) 0, hsl(var(--primary)) 2px, transparent 2px, transparent 50px)`,

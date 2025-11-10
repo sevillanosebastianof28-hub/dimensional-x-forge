@@ -3,7 +3,7 @@ import processFlowchart from "@/assets/process-flowchart.jpg";
 
 const Process = () => {
   return (
-    <section className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
+    <section id="process" className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
       {/* Background effects */}
       <div className="absolute inset-0 opacity-10" style={{
         backgroundImage: `repeating-linear-gradient(0deg, hsl(var(--primary)) 0, hsl(var(--primary)) 1px, transparent 1px, transparent 45px),
