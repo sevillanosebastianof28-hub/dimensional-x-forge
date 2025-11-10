@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import logo from "@/assets/dimensionalx-logo.png";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -23,31 +24,11 @@ const Header = () => {
     <header className={`flex justify-between items-center py-5 px-4 border-b border-border sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${scrolled ? 'bg-background/98 shadow-[0_0_30px_rgba(0,255,255,0.2)]' : 'bg-background/95'}`}>
       <div className="flex items-center gap-4 max-w-[1360px] mx-auto w-full">
         <div className="flex items-center gap-4 flex-1">
-          <div className="relative w-10 h-10" style={{ perspective: '400px' }}>
-            <div 
-              className="absolute w-full h-full animate-spin3d"
-              style={{
-                transformStyle: 'preserve-3d',
-              }}
-            >
-              {/* Front - Red */}
-              <div className="absolute w-full h-full bg-red-600 border border-red-700" style={{ transform: 'translateZ(20px)' }} />
-              {/* Back - Blue */}
-              <div className="absolute w-full h-full bg-blue-600 border border-blue-700" style={{ transform: 'translateZ(-20px) rotateY(180deg)' }} />
-              {/* Right - Green */}
-              <div className="absolute w-full h-full bg-green-600 border border-green-700" style={{ transform: 'rotateY(90deg) translateZ(20px)' }} />
-              {/* Left - Red */}
-              <div className="absolute w-full h-full bg-red-600 border border-red-700" style={{ transform: 'rotateY(-90deg) translateZ(20px)' }} />
-              {/* Top - Blue */}
-              <div className="absolute w-full h-full bg-blue-600 border border-blue-700" style={{ transform: 'rotateX(90deg) translateZ(20px)' }} />
-              {/* Bottom - Green */}
-              <div className="absolute w-full h-full bg-green-600 border border-green-700" style={{ transform: 'rotateX(-90deg) translateZ(20px)' }} />
-            </div>
-          </div>
-          <div>
-            <div className="text-2xl font-extrabold text-foreground">DimensionalX</div>
-            <div className="text-[10px] text-primary font-space-grotesk font-light tracking-[0.2em] uppercase">your prototype partner</div>
-          </div>
+          <img 
+            src={logo} 
+            alt="DimensionalX - Your Prototype Partner" 
+            className="h-12 w-auto object-contain"
+          />
         </div>
         
         <nav className="hidden md:flex items-center gap-2.5">
