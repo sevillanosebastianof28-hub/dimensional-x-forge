@@ -1,3 +1,5 @@
+import logo3d from "@/assets/logo-3d.png";
+
 const Hero = () => {
   return <main className="relative py-16 px-0 overflow-hidden max-w-[1360px] mx-auto">
       {/* Grid Background */}
@@ -31,7 +33,12 @@ const Hero = () => {
 
           {/* Image Block */}
           <div className="flex-[0_0_50%] flex justify-center items-center relative">
-            
+            <img 
+              src={logo3d} 
+              alt="DimensionalX 3D Logo" 
+              className="w-[400px] h-auto object-contain"
+              style={{ filter: 'drop-shadow(0 0 20px rgba(0, 255, 255, 0.3))' }}
+            />
           </div>
         </div>
       </div>
