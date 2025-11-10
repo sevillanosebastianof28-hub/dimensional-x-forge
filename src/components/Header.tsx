@@ -11,18 +11,18 @@ const Header = () => {
               transformStyle: 'preserve-3d',
             }}
           >
-            {/* Front */}
-            <div className="absolute w-full h-full bg-gradient-to-br from-primary/40 to-primary/10 border border-primary/60 backdrop-blur-sm shadow-[0_0_15px_rgba(0,255,255,0.4)]" style={{ transform: 'translateZ(20px)' }} />
-            {/* Back */}
-            <div className="absolute w-full h-full bg-gradient-to-br from-primary/30 to-primary/5 border border-primary/40 backdrop-blur-sm" style={{ transform: 'translateZ(-20px) rotateY(180deg)' }} />
-            {/* Right */}
-            <div className="absolute w-full h-full bg-gradient-to-br from-primary/35 to-primary/10 border border-primary/50 backdrop-blur-sm shadow-[0_0_10px_rgba(0,255,255,0.2)]" style={{ transform: 'rotateY(90deg) translateZ(20px)' }} />
-            {/* Left */}
-            <div className="absolute w-full h-full bg-gradient-to-br from-primary/35 to-primary/10 border border-primary/50 backdrop-blur-sm" style={{ transform: 'rotateY(-90deg) translateZ(20px)' }} />
-            {/* Top */}
-            <div className="absolute w-full h-full bg-gradient-to-br from-primary/45 to-primary/15 border border-primary/60 backdrop-blur-sm shadow-[0_0_12px_rgba(0,255,255,0.3)]" style={{ transform: 'rotateX(90deg) translateZ(20px)' }} />
-            {/* Bottom */}
-            <div className="absolute w-full h-full bg-gradient-to-br from-primary/25 to-primary/5 border border-primary/40 backdrop-blur-sm" style={{ transform: 'rotateX(-90deg) translateZ(20px)' }} />
+            {/* Front - Red */}
+            <div className="absolute w-full h-full bg-gradient-to-br from-red-500/50 to-red-700/30 border border-red-400/60 backdrop-blur-sm shadow-[0_0_15px_rgba(255,0,0,0.4)]" style={{ transform: 'translateZ(20px)' }} />
+            {/* Back - Cyan */}
+            <div className="absolute w-full h-full bg-gradient-to-br from-primary/40 to-primary/20 border border-primary/50 backdrop-blur-sm" style={{ transform: 'translateZ(-20px) rotateY(180deg)' }} />
+            {/* Right - Blue */}
+            <div className="absolute w-full h-full bg-gradient-to-br from-blue-500/50 to-blue-700/30 border border-blue-400/60 backdrop-blur-sm shadow-[0_0_15px_rgba(0,100,255,0.4)]" style={{ transform: 'rotateY(90deg) translateZ(20px)' }} />
+            {/* Left - Cyan */}
+            <div className="absolute w-full h-full bg-gradient-to-br from-primary/35 to-primary/15 border border-primary/50 backdrop-blur-sm" style={{ transform: 'rotateY(-90deg) translateZ(20px)' }} />
+            {/* Top - Green */}
+            <div className="absolute w-full h-full bg-gradient-to-br from-green-500/50 to-green-700/30 border border-green-400/60 backdrop-blur-sm shadow-[0_0_15px_rgba(0,255,0,0.4)]" style={{ transform: 'rotateX(90deg) translateZ(20px)' }} />
+            {/* Bottom - Cyan */}
+            <div className="absolute w-full h-full bg-gradient-to-br from-primary/30 to-primary/10 border border-primary/40 backdrop-blur-sm" style={{ transform: 'rotateX(-90deg) translateZ(20px)' }} />
           </div>
         </div>
         <div className="text-2xl font-extrabold text-foreground">DimensionalX</div>
