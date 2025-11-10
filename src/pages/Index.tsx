@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Process from "@/components/Process";
 import Machines from "@/components/Machines";
 import QualityControl from "@/components/QualityControl";
+import Contact from "@/components/Contact";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
       <Process />
       <Machines />
       <QualityControl />
+      <Contact />
     </>
   );
 };

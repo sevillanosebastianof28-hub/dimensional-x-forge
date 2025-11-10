@@ -93,7 +93,14 @@ const Header = () => {
             <span className="relative z-10">Quality Control</span>
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
           </button>
-          <Button 
+          <button 
+            onClick={() => scrollToSection('contact')} 
+            className="text-muted-foreground px-3.5 py-2.5 font-semibold text-sm transition-all duration-300 hover:text-primary hover:scale-110 cursor-pointer relative group"
+          >
+            <span className="relative z-10">Contact</span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          </button>
+          <Button
             onClick={() => window.location.href = '/portal'} 
             className="ml-2 relative overflow-hidden group hover:shadow-[0_0_20px_rgba(0,255,255,0.5)] transition-all duration-300 hover:scale-110"
           >
