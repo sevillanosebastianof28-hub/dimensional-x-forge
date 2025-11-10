@@ -57,12 +57,15 @@ const LogoHero = () => {
           </div>
         </div>
 
-        {/* DimensionalX Logo */}
-        <img 
-          src={logo} 
-          alt="DimensionalX - Your Prototype Partner" 
-          className="h-16 w-auto object-contain"
-        />
+        {/* DimensionalX Text */}
+        <div className="flex flex-col">
+          <h1 className="text-5xl font-extrabold text-foreground tracking-tight">
+            DimensionalX
+          </h1>
+          <p className="text-sm text-muted-foreground tracking-wide mt-1">
+            Your Prototype Partner
+          </p>
+        </div>
       </div>
     </div>
   );
