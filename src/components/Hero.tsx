@@ -1,44 +1,58 @@
-import { Canvas } from "@react-three/fiber";
 import { Button } from "@/components/ui/button";
-import Scene3D from "@/components/Scene3D";
+import cncParts from "@/assets/cnc-parts-3d.png";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-[#050607]">
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(#0a0d12_1px,transparent_1px),linear-gradient(90deg,#0a0d12_1px,transparent_1px)] bg-[size:40px_40px] opacity-30"></div>
+    <main className="relative px-10 py-16 overflow-hidden">
+      {/* Grid Background */}
+      <div 
+        className="absolute inset-0 opacity-20 z-[1]"
+        style={{
+          backgroundImage: `repeating-linear-gradient(0deg, hsl(var(--grid-color)) 0, hsl(var(--grid-color)) 1px, transparent 1px, transparent 30px),
+                           repeating-linear-gradient(90deg, hsl(var(--grid-color)) 0, hsl(var(--grid-color)) 1px, transparent 1px, transparent 30px)`,
+          backgroundSize: '30px 30px'
+        }}
+      />
 
-      {/* Neon Frame */}
-      <div className="absolute inset-8 border border-primary/70 rounded-[2rem] shadow-[0_0_35px_rgba(0,255,255,0.4)]"></div>
+      {/* Glowing Content Box */}
+      <div className="relative z-[2] p-16 bg-black/40 rounded-[20px] border border-primary shadow-[0_0_25px_rgba(0,255,255,0.5),0_0_50px_rgba(0,255,255,0.2)]">
+        <div className="flex justify-between items-center gap-12">
+          {/* Text Block */}
+          <div className="flex-1 max-w-[500px]">
+            <h1 className="text-[4.5rem] font-extrabold leading-[1.1] mb-0 text-shadow-[0_0_10px_rgba(255,255,255,0.1)]">
+              Precision.
+            </h1>
+            <h1 className="text-[4.5rem] font-extrabold leading-[1.1] mb-0 text-shadow-[0_0_10px_rgba(255,255,255,0.1)]">
+              Performance.
+            </h1>
+            <h1 className="text-[4.5rem] font-extrabold leading-[1.1] mb-0 text-shadow-[0_0_10px_rgba(255,255,255,0.1)]">
+              Perfection.
+            </h1>
+            <p className="text-lg text-muted-foreground mt-6 mb-10 leading-relaxed max-w-[450px]">
+              Dimensional X delivers end-to-end CNC manufacturing solutions — from concept to production — with digital precision and refined project visibility.
+            </p>
+            <a 
+              href="#" 
+              className="inline-block px-9 py-4 text-primary bg-transparent border-2 border-primary font-bold rounded-md transition-all shadow-[0_0_10px_rgba(0,255,255,0.5)] hover:bg-primary hover:text-background hover:shadow-[0_0_25px_rgba(0,255,255,1)]"
+            >
+              Request a Quote
+            </a>
+          </div>
 
-      {/* 3D Scene */}
-      <div className="absolute inset-0">
-        <Canvas
-          camera={{ position: [0, 0, 10], fov: 55 }}
-          gl={{ alpha: true, antialias: true }}
-        >
-          <Scene3D />
-        </Canvas>
+          {/* Image Block */}
+          <div className="flex-1 flex justify-center items-center">
+            <img 
+              src={cncParts} 
+              alt="3D rendered CNC machine parts" 
+              className="max-w-full"
+              style={{
+                filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 20px rgba(0, 255, 255, 0.6))'
+              }}
+            />
+          </div>
+        </div>
       </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 py-20 text-left">
-        <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
-          Precision.<br />
-          Performance.<br />
-          <span className="text-primary">Perfection.</span>
-        </h1>
-        <p className="text-gray-300 text-lg mt-6 mb-8 max-w-md">
-          Dimensional X delivers end-to-end CNC manufacturing solutions — from concept to production — with digital precision and refined project visibility.
-        </p>
-        <Button 
-          size="lg"
-          className="bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-md shadow-[0_0_25px_rgba(0,255,255,0.6)] hover:shadow-[0_0_40px_rgba(0,255,255,0.8)] transition-all"
-        >
-          Request a Quote
-        </Button>
-      </div>
-    </section>
+    </main>
   );
 };
 
