@@ -1,3 +1,5 @@
+import { CheckCircle, Ruler, Search, Package, Circle } from "lucide-react";
+
 const QualityControl = () => {
   return (
     <section id="quality" className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
@@ -71,7 +73,7 @@ const QualityControl = () => {
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-2xl">🔹</span>
+                    <Circle className="text-primary" size={20} />
                     <h4 className="text-2xl font-bold text-primary">Coordinate Measuring Machine (CMM)</h4>
                   </div>
                   <ul className="space-y-3">
@@ -94,7 +96,7 @@ const QualityControl = () => {
                   </ul>
                 </div>
                 <div className="w-full md:w-64 h-48 bg-black/40 rounded-xl border border-primary/20 flex items-center justify-center">
-                  <span className="text-6xl">📐</span>
+                  <Ruler className="text-primary" size={56} />
                 </div>
               </div>
             </div>
@@ -104,7 +106,7 @@ const QualityControl = () => {
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-2xl">🔹</span>
+                    <Circle className="text-primary" size={20} />
                     <h4 className="text-2xl font-bold text-primary">Optical & Vision Measurement Systems</h4>
                   </div>
                   <ul className="space-y-3">
@@ -123,7 +125,7 @@ const QualityControl = () => {
                   </ul>
                 </div>
                 <div className="w-full md:w-64 h-48 bg-black/40 rounded-xl border border-primary/20 flex items-center justify-center">
-                  <span className="text-6xl">🔍</span>
+                  <Search className="text-primary" size={56} />
                 </div>
               </div>
             </div>
@@ -131,7 +133,7 @@ const QualityControl = () => {
             {/* Advanced Surface */}
             <div className="bg-gradient-to-br from-black/50 to-black/30 p-8 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)] hover:shadow-[0_0_50px_rgba(0,255,255,0.25)] transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-2xl">🔹</span>
+                <Circle className="text-primary" size={20} />
                 <h4 className="text-2xl font-bold text-primary">Advanced Surface & Material Validation</h4>
               </div>
               <div className="grid md:grid-cols-2 gap-6">
@@ -171,7 +173,7 @@ const QualityControl = () => {
             {/* Digital Height Gauges */}
             <div className="bg-gradient-to-br from-black/50 to-black/30 p-8 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)] hover:shadow-[0_0_50px_rgba(0,255,255,0.25)] transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-2xl">🔹</span>
+                <Circle className="text-primary" size={20} />
                 <h4 className="text-2xl font-bold text-primary">Digital Height Gauges & Micrometers</h4>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -226,24 +228,24 @@ const QualityControl = () => {
               {/* Incoming Material */}
               <div className="bg-gradient-to-br from-black/50 to-black/30 p-6 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)] hover:shadow-[0_0_50px_rgba(0,255,255,0.25)] transition-all duration-500">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">🔹</span>
+                  <Circle className="text-primary" size={20} />
                   <h4 className="text-xl font-bold text-primary">Incoming Material Inspection</h4>
                 </div>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">✓</span>
+                    <CheckCircle className="text-primary mt-0.5" size={16} />
                     <span className="text-foreground/90">Raw material certificates reviewed for compliance</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">✓</span>
+                    <CheckCircle className="text-primary mt-0.5" size={16} />
                     <span className="text-foreground/90">Verification of critical dimensions on incoming stock</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">✓</span>
+                    <CheckCircle className="text-primary mt-0.5" size={16} />
                     <span className="text-foreground/90">Visual inspection for surface defects or damage</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">✓</span>
+                    <CheckCircle className="text-primary mt-0.5" size={16} />
                     <span className="text-foreground/90">Material traceability initiated and logged</span>
                   </li>
                 </ul>
@@ -252,20 +254,20 @@ const QualityControl = () => {
               {/* Final Inspection */}
               <div className="bg-gradient-to-br from-black/50 to-black/30 p-6 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)] hover:shadow-[0_0_50px_rgba(0,255,255,0.25)] transition-all duration-500">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">🔹</span>
+                  <Circle className="text-primary" size={20} />
                   <h4 className="text-xl font-bold text-primary">Final Inspection & Documentation</h4>
                 </div>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">✓</span>
+                    <CheckCircle className="text-primary mt-0.5" size={16} />
                     <span className="text-foreground/90">Final visual and dimensional checks prior to shipment</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">✓</span>
+                    <CheckCircle className="text-primary mt-0.5" size={16} />
                     <span className="text-foreground/90">Verification against customer drawings and tolerances</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">✓</span>
+                    <CheckCircle className="text-primary mt-0.5" size={16} />
                     <span className="text-foreground/90">Photo documentation available on request</span>
                   </li>
                 </ul>
@@ -274,12 +276,12 @@ const QualityControl = () => {
               {/* Packaging */}
               <div className="bg-gradient-to-br from-black/50 to-black/30 p-6 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)] hover:shadow-[0_0_50px_rgba(0,255,255,0.25)] transition-all duration-500">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-2xl">🔹</span>
+                  <Circle className="text-primary" size={20} />
                   <h4 className="text-xl font-bold text-primary">Packaging & Labeling</h4>
                 </div>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-primary mt-0.5">📦</span>
+                    <Package className="text-primary mt-0.5" size={16} />
                     <span className="text-foreground/90">Finished parts carefully packaged to prevent damage during transit</span>
                   </li>
                   <li className="flex items-start gap-2">

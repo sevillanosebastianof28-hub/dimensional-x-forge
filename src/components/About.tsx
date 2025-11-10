@@ -1,3 +1,5 @@
+import { MapPin, Zap, Lock, Shield, Plane, Award, Bot, Cog } from "lucide-react";
+
 const About = () => {
   return (
     <section id="about" className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
@@ -31,7 +33,7 @@ const About = () => {
           <div className="bg-gradient-to-br from-black/50 to-black/30 p-8 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)] hover:shadow-[0_0_50px_rgba(0,255,255,0.25)] transition-all duration-500 animate-fade-in">
             <div className="flex items-start gap-4 mb-4">
               <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-primary/30">
-                <span className="text-3xl">📍</span>
+                <MapPin className="text-primary" size={28} />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-3">Strategic Location & Proprietary Technology</h3>
@@ -49,7 +51,7 @@ const About = () => {
           <div className="bg-gradient-to-br from-black/50 to-black/30 p-8 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)] hover:shadow-[0_0_50px_rgba(0,255,255,0.25)] transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.1s' }}>
             <div className="flex items-start gap-4 mb-4">
               <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-primary/30">
-                <span className="text-3xl">⚡</span>
+                <Zap className="text-primary" size={28} />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-foreground mb-3">Next-Generation Manufacturing</h3>
@@ -64,7 +66,7 @@ const About = () => {
           <div className="bg-gradient-to-br from-black/60 to-black/40 p-8 rounded-2xl border-2 border-primary/40 backdrop-blur-sm shadow-[0_0_40px_rgba(0,255,255,0.2)] hover:shadow-[0_0_60px_rgba(0,255,255,0.3)] transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <div className="flex items-start gap-4 mb-4">
               <div className="w-14 h-14 bg-primary/30 rounded-xl flex items-center justify-center flex-shrink-0 border border-primary/50 shadow-[0_0_20px_rgba(0,255,255,0.3)]">
-                <span className="text-3xl">🔒</span>
+                <Lock className="text-primary" size={28} />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-primary mb-3">ITAR Compliance & Data Security</h3>
@@ -82,7 +84,7 @@ const About = () => {
           <div className="bg-gradient-to-br from-black/60 to-black/40 p-8 rounded-2xl border-2 border-primary/40 backdrop-blur-sm shadow-[0_0_40px_rgba(0,255,255,0.2)] hover:shadow-[0_0_60px_rgba(0,255,255,0.3)] transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <div className="flex items-start gap-4 mb-4">
               <div className="w-14 h-14 bg-primary/30 rounded-xl flex items-center justify-center flex-shrink-0 border border-primary/50 shadow-[0_0_20px_rgba(0,255,255,0.3)]">
-                <span className="text-3xl">🛡️</span>
+                <Shield className="text-primary" size={28} />
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-primary mb-3">Security Clearance Requirements</h3>
@@ -96,22 +98,22 @@ const About = () => {
           {/* Industry Badges */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <div className="group bg-gradient-to-br from-primary/10 to-transparent p-6 rounded-xl border border-primary/30 hover:border-primary/50 hover:bg-primary/15 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(0,255,255,0.2)] text-center">
-              <div className="text-4xl mb-2">✈️</div>
+              <Plane className="text-primary mx-auto mb-2" size={32} />
               <p className="text-sm font-bold text-foreground">Aerospace</p>
             </div>
             
             <div className="group bg-gradient-to-br from-primary/10 to-transparent p-6 rounded-xl border border-primary/30 hover:border-primary/50 hover:bg-primary/15 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(0,255,255,0.2)] text-center">
-              <div className="text-4xl mb-2">🎖️</div>
+              <Award className="text-primary mx-auto mb-2" size={32} />
               <p className="text-sm font-bold text-foreground">Defense</p>
             </div>
             
             <div className="group bg-gradient-to-br from-primary/10 to-transparent p-6 rounded-xl border border-primary/30 hover:border-primary/50 hover:bg-primary/15 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(0,255,255,0.2)] text-center">
-              <div className="text-4xl mb-2">🤖</div>
+              <Bot className="text-primary mx-auto mb-2" size={32} />
               <p className="text-sm font-bold text-foreground">Robotics</p>
             </div>
             
             <div className="group bg-gradient-to-br from-primary/10 to-transparent p-6 rounded-xl border border-primary/30 hover:border-primary/50 hover:bg-primary/15 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(0,255,255,0.2)] text-center">
-              <div className="text-4xl mb-2">⚙️</div>
+              <Cog className="text-primary mx-auto mb-2" size={32} />
               <p className="text-sm font-bold text-foreground">Advanced Mfg</p>
             </div>
           </div>

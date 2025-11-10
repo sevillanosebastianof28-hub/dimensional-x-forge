@@ -1,4 +1,5 @@
 import MissionParts3D from "./MissionParts3D";
+import { Settings, Wrench, Rocket, CheckCircle } from "lucide-react";
 
 const Mission = () => {
   return (
@@ -80,7 +81,7 @@ const Mission = () => {
             <div className="grid grid-cols-2 gap-4 pt-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <div className="group bg-gradient-to-br from-primary/5 to-transparent p-5 rounded-xl border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)]">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-primary/30 transition-colors">
-                  <span className="text-2xl">⚙️</span>
+                  <Settings className="text-primary" size={24} />
                 </div>
                 <h3 className="font-bold text-foreground mb-2">Advanced CNC</h3>
                 <p className="text-sm text-muted-foreground">Multi-axis machining with micron-level precision</p>
@@ -88,7 +89,7 @@ const Mission = () => {
 
               <div className="group bg-gradient-to-br from-primary/5 to-transparent p-5 rounded-xl border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)]">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-primary/30 transition-colors">
-                  <span className="text-2xl">🔧</span>
+                  <Wrench className="text-primary" size={24} />
                 </div>
                 <h3 className="font-bold text-foreground mb-2">Complex Assemblies</h3>
                 <p className="text-sm text-muted-foreground">Integration of mission-critical components</p>
@@ -96,7 +97,7 @@ const Mission = () => {
 
               <div className="group bg-gradient-to-br from-primary/5 to-transparent p-5 rounded-xl border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)]">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-primary/30 transition-colors">
-                  <span className="text-2xl">🚀</span>
+                  <Rocket className="text-primary" size={24} />
                 </div>
                 <h3 className="font-bold text-foreground mb-2">Rapid Prototyping</h3>
                 <p className="text-sm text-muted-foreground">Fast iteration from concept to production</p>
@@ -104,7 +105,7 @@ const Mission = () => {
 
               <div className="group bg-gradient-to-br from-primary/5 to-transparent p-5 rounded-xl border border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)]">
                 <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mb-3 group-hover:bg-primary/30 transition-colors">
-                  <span className="text-2xl">✓</span>
+                  <CheckCircle className="text-primary" size={24} />
                 </div>
                 <h3 className="font-bold text-foreground mb-2">QA & Support</h3>
                 <p className="text-sm text-muted-foreground">End-to-end lifecycle management</p>
