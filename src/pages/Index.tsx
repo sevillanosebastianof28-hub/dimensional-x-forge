@@ -6,15 +6,14 @@ import Process from "@/components/Process";
 import Machines from "@/components/Machines";
 import QualityControl from "@/components/QualityControl";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
-import LogoHero from "@/components/LogoHero";
 
 const Index = () => {
   return (
     <>
       <AnimatedBackground />
       <Header />
-      <LogoHero />
       <Hero />
       <Mission />
       <About />
@@ -22,6 +21,7 @@ const Index = () => {
       <Machines />
       <QualityControl />
       <Contact />
+      <Footer />
     </>
   );
 };
