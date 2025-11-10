@@ -1,4 +1,3 @@
-import cncParts from "@/assets/cnc-parts-3d.png";
 const Hero = () => {
   return <main className="relative py-16 px-0 overflow-hidden max-w-[1360px] mx-auto">
       {/* Grid Background */}
