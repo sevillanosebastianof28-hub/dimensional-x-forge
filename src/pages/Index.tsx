@@ -7,12 +7,14 @@ import Machines from "@/components/Machines";
 import QualityControl from "@/components/QualityControl";
 import Contact from "@/components/Contact";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import LogoHero from "@/components/LogoHero";
 
 const Index = () => {
   return (
     <>
       <AnimatedBackground />
       <Header />
+      <LogoHero />
       <Hero />
       <Mission />
       <About />
