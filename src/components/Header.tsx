@@ -23,35 +23,29 @@ const Header = () => {
   return (
     <header className={`flex justify-between items-center py-5 px-4 border-b border-border sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${scrolled ? 'bg-background/98 shadow-[0_0_30px_rgba(0,255,255,0.2)]' : 'bg-background/95'}`}>
       <div className="flex items-center gap-4 max-w-[1360px] mx-auto w-full">
-        <div className="flex items-center gap-3 flex-1">
-          {/* Rotating 3D Cube */}
-          <div className="relative w-10 h-10" style={{ perspective: '400px' }}>
-            <div 
-              className="absolute w-full h-full animate-spin3d"
+        <div className="flex items-center gap-0 flex-1">
+          {/* Rotating Cube from Logo */}
+          <div className="relative h-12 w-[100px] overflow-visible">
+            <img 
+              src={logo} 
+              alt="DimensionalX Cube" 
+              className="absolute h-12 w-auto object-contain animate-spin3d origin-center"
               style={{
-                transformStyle: 'preserve-3d',
+                clipPath: 'inset(0 75% 0 0)',
+                left: '10px'
               }}
-            >
-              {/* Front - Green */}
-              <div className="absolute w-full h-full bg-gradient-to-br from-green-500 to-green-600 border border-green-700 shadow-lg" style={{ transform: 'translateZ(20px)' }} />
-              {/* Back - Red */}
-              <div className="absolute w-full h-full bg-gradient-to-br from-red-500 to-red-600 border border-red-700 shadow-lg" style={{ transform: 'translateZ(-20px) rotateY(180deg)' }} />
-              {/* Right - Blue */}
-              <div className="absolute w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 border border-blue-600 shadow-lg" style={{ transform: 'rotateY(90deg) translateZ(20px)' }} />
-              {/* Left - Red */}
-              <div className="absolute w-full h-full bg-gradient-to-br from-red-500 to-red-600 border border-red-700 shadow-lg" style={{ transform: 'rotateY(-90deg) translateZ(20px)' }} />
-              {/* Top - Blue */}
-              <div className="absolute w-full h-full bg-gradient-to-br from-blue-400 to-blue-500 border border-blue-600 shadow-lg" style={{ transform: 'rotateX(90deg) translateZ(20px)' }} />
-              {/* Bottom - Green */}
-              <div className="absolute w-full h-full bg-gradient-to-br from-green-500 to-green-600 border border-green-700 shadow-lg" style={{ transform: 'rotateX(-90deg) translateZ(20px)' }} />
-            </div>
+            />
           </div>
           
-          {/* Logo Text */}
-          <div>
-            <div className="text-2xl font-extrabold text-foreground">DimensionalX</div>
-            <div className="text-[10px] text-primary font-space-grotesk font-light tracking-[0.2em] uppercase">your prototype partner</div>
-          </div>
+          {/* Static Text from Logo */}
+          <img 
+            src={logo} 
+            alt="DimensionalX - Your Prototype Partner" 
+            className="h-12 w-auto object-contain ml-[-20px]"
+            style={{
+              clipPath: 'inset(0 0 0 25%)'
+            }}
+          />
         </div>
         
         <nav className="hidden md:flex items-center gap-2.5">
