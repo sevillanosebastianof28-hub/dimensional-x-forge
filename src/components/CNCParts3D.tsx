@@ -206,8 +206,17 @@ const Scene = () => {
 
 const CNCParts3D = () => {
   return (
-    <div className="w-full h-full">
-      <Canvas shadows>
+    <div className="w-full h-full relative">
+      <Canvas 
+        shadows 
+        dpr={[1, 2]}
+        gl={{ 
+          antialias: true,
+          alpha: true,
+          preserveDrawingBuffer: true 
+        }}
+        style={{ width: '100%', height: '100%' }}
+      >
         <Suspense fallback={null}>
           <Scene />
         </Suspense>

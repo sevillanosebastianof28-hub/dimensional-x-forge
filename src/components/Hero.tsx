@@ -32,8 +32,10 @@ const Hero = () => {
           </div>
 
           {/* 3D CNC Parts Visualization */}
-          <div className="flex-[0_0_50%] flex justify-center items-center relative h-[500px]">
-            <CNCParts3D />
+          <div className="flex-[0_0_50%] flex justify-center items-center relative">
+            <div className="w-full h-[500px]">
+              <CNCParts3D />
+            </div>
           </div>
         </div>
       </div>
