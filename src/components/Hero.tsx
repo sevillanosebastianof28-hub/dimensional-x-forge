@@ -1,17 +1,12 @@
 import cncParts from "@/assets/cnc-parts-3d.png";
-
 const Hero = () => {
-  return (
-    <main className="relative py-16 px-0 overflow-hidden max-w-[1360px] mx-auto">
+  return <main className="relative py-16 px-0 overflow-hidden max-w-[1360px] mx-auto">
       {/* Grid Background */}
-      <div 
-        className="absolute inset-0 opacity-20 z-[1]"
-        style={{
-          backgroundImage: `repeating-linear-gradient(0deg, hsl(var(--grid-color)) 0, hsl(var(--grid-color)) 1px, transparent 1px, transparent 30px),
+      <div className="absolute inset-0 opacity-20 z-[1]" style={{
+      backgroundImage: `repeating-linear-gradient(0deg, hsl(var(--grid-color)) 0, hsl(var(--grid-color)) 1px, transparent 1px, transparent 30px),
                            repeating-linear-gradient(90deg, hsl(var(--grid-color)) 0, hsl(var(--grid-color)) 1px, transparent 1px, transparent 30px)`,
-          backgroundSize: '30px 30px'
-        }}
-      />
+      backgroundSize: '30px 30px'
+    }} />
 
       {/* Glowing Content Box */}
       <div className="relative z-[2] py-16 px-[70px] bg-black/40 rounded-[20px] border border-primary shadow-[0_0_25px_rgba(0,255,255,0.5),0_0_50px_rgba(0,255,255,0.2)]">
@@ -30,29 +25,17 @@ const Hero = () => {
             <p className="text-lg text-muted-foreground my-6 mb-10 leading-relaxed max-w-[450px]">
               Dimensional X delivers end-to-end CNC manufacturing solutions — from concept to production — with digital precision and refined project visibility.
             </p>
-            <a 
-              href="#" 
-              className="inline-block px-9 py-4 text-primary bg-transparent border-2 border-primary font-bold rounded-md transition-all shadow-[0_0_10px_rgba(0,255,255,0.5)] hover:bg-primary hover:text-background hover:shadow-[0_0_25px_rgba(0,255,255,1)] no-underline"
-            >
+            <a href="#" className="inline-block px-9 py-4 text-primary bg-transparent border-2 border-primary font-bold rounded-md transition-all shadow-[0_0_10px_rgba(0,255,255,0.5)] hover:bg-primary hover:text-background hover:shadow-[0_0_25px_rgba(0,255,255,1)] no-underline">
               Request a Quote
             </a>
           </div>
 
           {/* Image Block */}
           <div className="flex-[0_0_50%] flex justify-center items-center relative">
-            <img 
-              src={cncParts} 
-              alt="3D rendered CNC machine parts" 
-              className="max-w-full"
-              style={{
-                filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 20px rgba(0, 255, 255, 0.6))'
-              }}
-            />
+            
           </div>
         </div>
       </div>
-    </main>
-  );
+    </main>;
 };
-
 export default Hero;
