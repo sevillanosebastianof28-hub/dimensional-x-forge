@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, Search, ShoppingCart, Settings, TrendingUp, Activity } from "lucide-react";
+import { ArrowRight, FileText, Search, ShoppingCart, Settings, TrendingUp, Activity, Lock, Upload, Database } from "lucide-react";
 import processFlowchart from "@/assets/process-flowchart.jpg";
 
 const Process = () => {
@@ -43,18 +43,62 @@ const Process = () => {
 
         {/* Process Steps */}
         <div className="max-w-6xl mx-auto space-y-12 mb-20">
-          {/* RFQ */}
-          <div className="bg-gradient-to-br from-black/50 to-black/30 p-8 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)] hover:shadow-[0_0_50px_rgba(0,255,255,0.25)] transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="flex items-start gap-6">
-              <div className="flex-shrink-0 w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center border border-primary/40">
-                <FileText className="text-primary" size={32} />
+          {/* Customer Portal */}
+          <div className="bg-gradient-to-br from-primary/10 to-transparent p-8 rounded-2xl border-2 border-primary/40 backdrop-blur-sm shadow-[0_0_40px_rgba(0,255,255,0.25)] hover:shadow-[0_0_60px_rgba(0,255,255,0.35)] transition-all duration-500 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <div className="flex items-start gap-6 mb-6">
+              <div className="flex-shrink-0 w-16 h-16 bg-primary/30 rounded-xl flex items-center justify-center border border-primary/50 shadow-[0_0_20px_rgba(0,255,255,0.2)]">
+                <Lock className="text-primary" size={32} />
               </div>
               <div className="flex-1">
-                <h4 className="text-2xl font-bold text-primary mb-3">Request for Quotation (RFQ)</h4>
-                <p className="text-lg text-foreground/90 leading-relaxed">
-                  It all begins with your project specs. You send us a 2D drawing, 3D model, or sample along with material and tolerance requirements. Our engineering team reviews every detail to ensure a fast, accurate, and competitive quote.
+                <h4 className="text-3xl font-bold text-primary mb-4">DimX Customer Portal</h4>
+                <p className="text-lg text-foreground/90 leading-relaxed mb-4">
+                  Access your personalized <span className="font-bold text-primary">DimensionalX Customer Portal</span> — a secure, encrypted platform designed for seamless collaboration on your manufacturing projects. Submit RFQs, upload CAD files, track orders, and review inspection reports all in one centralized location.
                 </p>
               </div>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="bg-black/40 backdrop-blur-sm p-5 rounded-xl border border-primary/30 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                    <Upload className="text-primary" size={20} />
+                  </div>
+                  <h5 className="font-bold text-foreground">Secure File Upload</h5>
+                </div>
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  Upload 2D drawings, 3D models, and technical specifications through our encrypted portal. ITAR/EAR compliant file sharing hosted on our private Synology NAS.
+                </p>
+              </div>
+
+              <div className="bg-black/40 backdrop-blur-sm p-5 rounded-xl border border-primary/30 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                    <Database className="text-primary" size={20} />
+                  </div>
+                  <h5 className="font-bold text-foreground">Order History & Tracking</h5>
+                </div>
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  View past purchase orders, part history, and real-time production status. Download inspection reports, certifications, and shipping documentation anytime.
+                </p>
+              </div>
+
+              <div className="bg-black/40 backdrop-blur-sm p-5 rounded-xl border border-primary/30 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 group">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/30 transition-colors">
+                    <FileText className="text-primary" size={20} />
+                  </div>
+                  <h5 className="font-bold text-foreground">RFQ & Quote Management</h5>
+                </div>
+                <p className="text-sm text-foreground/80 leading-relaxed">
+                  Submit quote requests with material and tolerance specifications. Receive detailed quotes within 24-48 hours including DFM feedback and lead times.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 p-4 bg-gradient-to-r from-primary/20 to-transparent rounded-lg border-l-4 border-primary">
+              <p className="text-sm text-foreground/90 italic">
+                <span className="font-bold text-primary">✓ NDA Protected</span> • All users handling sensitive data execute strict non-disclosure agreements prior to portal access.
+              </p>
             </div>
           </div>
 
