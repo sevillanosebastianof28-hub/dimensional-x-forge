@@ -46,7 +46,7 @@ const Header = () => {
           </div>
           <div>
             <div className="text-2xl font-extrabold text-foreground">DimensionalX</div>
-            <div className="text-xs text-primary font-semibold tracking-wider">your prototype partner</div>
+            <div className="text-[10px] text-primary font-space-grotesk font-light tracking-[0.2em] uppercase">your prototype partner</div>
           </div>
         </div>
         
