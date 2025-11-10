@@ -1,4 +1,4 @@
-import logo3d from "@/assets/logo-3d.png";
+import CNCParts3D from "./CNCParts3D";
 
 const Hero = () => {
   return <main className="relative py-16 px-0 overflow-hidden max-w-[1360px] mx-auto">
@@ -31,14 +31,9 @@ const Hero = () => {
             </a>
           </div>
 
-          {/* Image Block */}
-          <div className="flex-[0_0_50%] flex justify-center items-center relative">
-            <img 
-              src={logo3d} 
-              alt="DimensionalX 3D Logo" 
-              className="w-[400px] h-auto object-contain"
-              style={{ filter: 'drop-shadow(0 0 20px rgba(0, 255, 255, 0.3))' }}
-            />
+          {/* 3D CNC Parts Visualization */}
+          <div className="flex-[0_0_50%] flex justify-center items-center relative h-[500px]">
+            <CNCParts3D />
           </div>
         </div>
       </div>
