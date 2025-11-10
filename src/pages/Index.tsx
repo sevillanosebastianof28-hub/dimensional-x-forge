@@ -5,10 +5,12 @@ import About from "@/components/About";
 import Process from "@/components/Process";
 import Machines from "@/components/Machines";
 import QualityControl from "@/components/QualityControl";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 const Index = () => {
   return (
     <>
+      <AnimatedBackground />
       <Header />
       <Hero />
       <Mission />

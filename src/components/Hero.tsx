@@ -23,13 +23,13 @@ const Hero = () => {
           {/* Text Block */}
           <div className="flex-[0_0_48%] max-w-[550px]">
             <div className="mb-8">
-              <h1 className="text-[5rem] font-extrabold leading-[0.95] m-0 bg-gradient-to-r from-foreground via-primary/90 to-foreground bg-clip-text text-transparent animate-fade-in">
+              <h1 className="text-[5rem] font-extrabold leading-[0.95] m-0 bg-gradient-to-r from-foreground via-primary/90 to-foreground bg-clip-text text-transparent animate-fade-in-up hover:scale-105 transition-transform duration-300 cursor-default">
                 Precision.
               </h1>
-              <h1 className="text-[5rem] font-extrabold leading-[0.95] m-0 bg-gradient-to-r from-foreground via-accent/90 to-foreground bg-clip-text text-transparent animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <h1 className="text-[5rem] font-extrabold leading-[0.95] m-0 bg-gradient-to-r from-foreground via-accent/90 to-foreground bg-clip-text text-transparent animate-fade-in-up hover:scale-105 transition-transform duration-300 cursor-default" style={{ animationDelay: '0.1s' }}>
                 Performance.
               </h1>
-              <h1 className="text-[5rem] font-extrabold leading-[0.95] m-0 bg-gradient-to-r from-foreground via-primary/90 to-foreground bg-clip-text text-transparent animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <h1 className="text-[5rem] font-extrabold leading-[0.95] m-0 bg-gradient-to-r from-foreground via-primary/90 to-foreground bg-clip-text text-transparent animate-fade-in-up hover:scale-105 transition-transform duration-300 cursor-default" style={{ animationDelay: '0.2s' }}>
                 Perfection.
               </h1>
             </div>
@@ -43,49 +43,51 @@ const Hero = () => {
               </p>
             </div>
             
-            <div className="flex gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="flex gap-4 animate-scale-in" style={{ animationDelay: '0.4s' }}>
               <Button 
                 size="lg" 
-                className="px-8 py-6 text-base font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_rgba(0,255,255,0.4)] hover:shadow-[0_0_30px_rgba(0,255,255,0.6)] transition-all duration-300 hover:scale-105"
+                className="px-8 py-6 text-base font-bold bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_20px_rgba(0,255,255,0.4)] hover:shadow-[0_0_40px_rgba(0,255,255,0.7)] transition-all duration-300 hover:scale-110 relative overflow-hidden group"
               >
-                Request a Quote
+                <span className="relative z-10">Request a Quote</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
-                className="px-8 py-6 text-base font-bold border-2 border-primary/60 bg-transparent text-primary hover:bg-primary/10 hover:border-primary transition-all duration-300"
+                className="px-8 py-6 text-base font-bold border-2 border-primary/60 bg-transparent text-primary hover:bg-primary/20 hover:border-primary hover:scale-110 transition-all duration-300 relative overflow-hidden group"
               >
-                View Portfolio
+                <span className="relative z-10">View Portfolio</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
               </Button>
             </div>
           </div>
 
           {/* 3D Visualization with Labels */}
-          <div className="flex-[0_0_48%] flex flex-col justify-center items-center relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <div className="w-full h-[550px] relative rounded-xl overflow-hidden border border-primary/30 bg-black/20 shadow-[inset_0_0_30px_rgba(0,255,255,0.1)]">
+          <div className="flex-[0_0_48%] flex flex-col justify-center items-center relative animate-slide-in-right" style={{ animationDelay: '0.2s' }}>
+            <div className="w-full h-[550px] relative rounded-xl overflow-hidden border border-primary/30 bg-black/20 shadow-[inset_0_0_30px_rgba(0,255,255,0.1)] hover:border-primary/60 hover:shadow-[inset_0_0_50px_rgba(0,255,255,0.2)] transition-all duration-500 group">
               <CNCParts3D />
               
               {/* Overlay label */}
-              <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-lg border border-primary/40 z-10">
-                <p className="text-xs text-muted-foreground mb-1">Interactive 3D View</p>
-                <p className="text-sm font-bold text-primary">Click & Drag to Rotate</p>
+              <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-sm px-4 py-2 rounded-lg border border-primary/40 z-10 hover:bg-black/90 hover:border-primary/70 transition-all duration-300 group/label">
+                <p className="text-xs text-muted-foreground mb-1 group-hover/label:text-primary transition-colors">Interactive 3D View</p>
+                <p className="text-sm font-bold text-primary group-hover/label:scale-110 transition-transform inline-block">Click & Drag to Rotate</p>
               </div>
               
               {/* Part labels */}
               <div className="absolute bottom-4 left-4 right-4 flex flex-wrap gap-2 z-10">
-                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90 hover:bg-black/90 hover:border-primary/60 hover:scale-105 transition-all duration-300 cursor-default">
                   Precision Gears
                 </div>
-                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90 hover:bg-black/90 hover:border-primary/60 hover:scale-105 transition-all duration-300 cursor-default">
                   CNC Shaft
                 </div>
-                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90 hover:bg-black/90 hover:border-primary/60 hover:scale-105 transition-all duration-300 cursor-default">
                   Engine Block
                 </div>
-                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90 hover:bg-black/90 hover:border-primary/60 hover:scale-105 transition-all duration-300 cursor-default">
                   Ball Bearings
                 </div>
-                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90">
+                <div className="bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/30 text-xs text-foreground/90 hover:bg-black/90 hover:border-primary/60 hover:scale-105 transition-all duration-300 cursor-default">
                   Cutting Tools
                 </div>
               </div>
@@ -93,13 +95,13 @@ const Hero = () => {
             
             {/* Tech specs below 3D view */}
             <div className="mt-4 w-full grid grid-cols-2 gap-3 text-center">
-              <div className="bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105">
-                <p className="text-xs text-muted-foreground">Precision</p>
-                <p className="text-sm font-bold text-primary">High-Tolerance</p>
+              <div className="bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110 hover:bg-black/60 hover:shadow-[0_0_20px_rgba(0,255,255,0.3)] group cursor-default">
+                <p className="text-xs text-muted-foreground group-hover:text-primary transition-colors">Precision</p>
+                <p className="text-sm font-bold text-primary group-hover:scale-110 transition-transform inline-block">High-Tolerance</p>
               </div>
-              <div className="bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105">
-                <p className="text-xs text-muted-foreground">Production</p>
-                <p className="text-sm font-bold text-primary">Mission-Critical</p>
+              <div className="bg-black/40 backdrop-blur-sm p-3 rounded-lg border border-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-110 hover:bg-black/60 hover:shadow-[0_0_20px_rgba(0,255,255,0.3)] group cursor-default">
+                <p className="text-xs text-muted-foreground group-hover:text-primary transition-colors">Production</p>
+                <p className="text-sm font-bold text-primary group-hover:scale-110 transition-transform inline-block">Mission-Critical</p>
               </div>
             </div>
           </div>
