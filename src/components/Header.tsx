@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import logo from "@/assets/dimensionalx-logo.png";
+import logo from "@/assets/cube_logo.png";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
