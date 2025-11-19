@@ -27,14 +27,14 @@ const Mission = () => {
         </div>
 
         {/* Main Content */}
-        <div className="flex gap-12 items-center">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-center px-4 md:px-8">
           {/* Image Side */}
-          <div className="flex-1 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <div className="w-full lg:flex-1 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <div className="relative group">
               {/* Glow effect behind image */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
               
-              <div className="relative bg-gradient-to-br from-black/60 to-black/40 p-6 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.2)] group-hover:shadow-[0_0_50px_rgba(0,255,255,0.4)] transition-all duration-500 h-[500px]">
+              <div className="relative bg-gradient-to-br from-black/60 to-black/40 p-4 md:p-6 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.2)] group-hover:shadow-[0_0_50px_rgba(0,255,255,0.4)] transition-all duration-500 h-[300px] md:h-[400px] lg:h-[500px]">
                 <MissionParts3D />
                 
                 {/* Overlay labels */}
@@ -62,8 +62,8 @@ const Mission = () => {
           </div>
 
           {/* Content Side */}
-          <div className="flex-1 space-y-6">
-            <div className="space-y-5 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+          <div className="w-full lg:flex-1 space-y-4 md:space-y-6">
+            <div className="space-y-4 md:space-y-5 animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <p className="text-lg text-foreground/90 leading-relaxed">
                 At <span className="font-bold text-primary">DimensionalX</span>, we specialize in <span className="font-semibold text-foreground">high-tolerance CNC machining</span> and the integration of <span className="font-semibold text-foreground">complex mechanical assemblies</span> engineered for mission-critical applications.
               </p>

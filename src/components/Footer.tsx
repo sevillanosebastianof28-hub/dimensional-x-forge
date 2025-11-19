@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
-    <footer className="relative py-12 px-4 border-t border-border bg-background/95 backdrop-blur-md">
-      <div className="max-w-[1360px] mx-auto">
+    <footer className="relative py-8 md:py-12 px-4 border-t border-border bg-background/95 backdrop-blur-md">
+      <div className="max-w-[1360px] mx-auto animate-fade-in">
         {/* Logo Section with Rotating Cube */}
-        <div className="flex justify-center items-center mb-8">
-          <div className="flex items-center gap-6">
+        <div className="flex justify-center items-center mb-6 md:mb-8">
+          <div className="flex items-center gap-4 md:gap-6 hover:scale-105 transition-transform duration-500">
             {/* Rotating 3D Cube */}
             <div className="relative w-20 h-20" style={{ perspective: '500px' }}>
               <div 
@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
 
         {/* Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-bold text-foreground mb-4">Quick Links</h3>
