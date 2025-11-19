@@ -14,7 +14,7 @@ const Hero = () => {
     }
   };
 
-  return <main id="hero" className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
+  return <main id="hero" className="relative py-20 px-4 overflow-hidden max-w-[1400px] mx-auto">
       {/* Animated Grid Background */}
       <div className="absolute inset-0 opacity-30 z-[1]" style={{
       backgroundImage: `repeating-linear-gradient(0deg, #00F6FF 0, #00F6FF 1px, transparent 1px, transparent 30px),
@@ -38,8 +38,8 @@ const Hero = () => {
       }} />
 
       {/* Main Content Container */}
-      <div className="relative z-[2] py-16 px-[50px] bg-gradient-to-br from-[#1A1C1F]/90 via-[#2A2D33]/85 to-[#1A1C1F]/90 rounded-[24px] border border-[#00F6FF]/50 shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] backdrop-blur-md">
-        <div className="flex justify-between items-start gap-10">
+      <div className="relative z-[2] py-16 px-12 bg-gradient-to-br from-[#1A1C1F]/90 via-[#2A2D33]/85 to-[#1A1C1F]/90 rounded-[24px] border border-[#00F6FF]/50 shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] backdrop-blur-md">
+        <div className="flex justify-between items-start gap-12">
           {/* Text Block */}
           <div className="flex-[0_0_45%]">
             {/* Logo with spinning cube */}
@@ -95,7 +95,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-[#00F6FF]/40 to-[#00A8CC]/30 rounded-2xl blur-[100px] group-hover:blur-[120px] transition-all duration-700" />
               
               {/* Video Container */}
-              <div className="relative bg-gradient-to-br from-[#1A1C1F]/80 to-[#2A2D33]/70 p-8 rounded-2xl border-2 border-[#00F6FF]/60 backdrop-blur-md shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] group-hover:shadow-[0_0_90px_rgba(0,246,255,0.6),0_0_140px_rgba(0,168,204,0.3)] transition-all duration-500 h-[520px] animate-scale-in overflow-hidden" style={{ animationDelay: '0.3s' }}>
+              <div className="relative bg-gradient-to-br from-[#1A1C1F]/80 to-[#2A2D33]/70 p-10 rounded-2xl border-2 border-[#00F6FF]/60 backdrop-blur-md shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] group-hover:shadow-[0_0_90px_rgba(0,246,255,0.6),0_0_140px_rgba(0,168,204,0.3)] transition-all duration-500 h-[600px] animate-scale-in overflow-hidden" style={{ animationDelay: '0.3s' }}>
                 <video 
                   src={machineVideo}
                   autoPlay
@@ -123,7 +123,7 @@ const Hero = () => {
             </div>
             
             {/* Technical Specifications */}
-            <div className="mt-6 grid grid-cols-3 gap-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="mt-7 grid grid-cols-3 gap-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
               <div className="bg-[#2A2D33]/70 backdrop-blur-md p-5 rounded-xl border-2 border-[#00F6FF]/40 hover:border-[#00F6FF]/80 hover:bg-[#00F6FF]/10 transition-all duration-300 group shadow-[0_0_20px_rgba(0,246,255,0.2)]">
                 <div className="text-2xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300" style={{ color: '#00F6FF' }}>±0.001"</div>
                 <div className="text-xs font-medium" style={{ color: '#A7AEB8' }}>Tight Tolerance</div>
