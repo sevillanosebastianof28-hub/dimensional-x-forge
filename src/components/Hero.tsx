@@ -1,8 +1,8 @@
-import MachineAssembly3D from "./MachineAssembly3D";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 import logo from "@/assets/dimensionalx-logo-new.png";
 import cube from "@/assets/cube-new.png";
+import machineVideo from "@/assets/machine-animation.mp4";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -88,27 +88,34 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* 3D Visual Block */}
+          {/* Video Visual Block */}
           <div className="flex-[0_0_52%] relative">
             <div className="relative group">
               {/* Outer glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#00F6FF]/40 to-[#00A8CC]/30 rounded-2xl blur-[100px] group-hover:blur-[120px] transition-all duration-700" />
               
-              {/* 3D Canvas Container */}
-              <div className="relative bg-gradient-to-br from-[#1A1C1F]/80 to-[#2A2D33]/70 p-8 rounded-2xl border-2 border-[#00F6FF]/60 backdrop-blur-md shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] group-hover:shadow-[0_0_90px_rgba(0,246,255,0.6),0_0_140px_rgba(0,168,204,0.3)] transition-all duration-500 h-[650px] animate-scale-in" style={{ animationDelay: '0.3s' }}>
-                <MachineAssembly3D />
+              {/* Video Container */}
+              <div className="relative bg-gradient-to-br from-[#1A1C1F]/80 to-[#2A2D33]/70 p-8 rounded-2xl border-2 border-[#00F6FF]/60 backdrop-blur-md shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] group-hover:shadow-[0_0_90px_rgba(0,246,255,0.6),0_0_140px_rgba(0,168,204,0.3)] transition-all duration-500 h-[650px] animate-scale-in overflow-hidden" style={{ animationDelay: '0.3s' }}>
+                <video 
+                  src={machineVideo}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover rounded-lg"
+                />
                 
                 {/* Overlay labels */}
                 <div className="absolute top-6 left-6 bg-[#1A1C1F]/95 backdrop-blur-md px-6 py-4 rounded-xl border-2 border-[#00F6FF]/70 z-10 animate-fade-in shadow-[0_0_30px_rgba(0,246,255,0.4)]" style={{ animationDelay: '0.4s' }}>
-                  <p className="text-xs mb-1 uppercase tracking-wider" style={{ color: '#A7AEB8' }}>Assembly Visualization</p>
+                  <p className="text-xs mb-1 uppercase tracking-wider" style={{ color: '#A7AEB8' }}>Live Demonstration</p>
                   <p className="text-base font-bold" style={{ color: '#00F6FF' }}>Precision CNC Machining Center</p>
                 </div>
                 
                 <div className="absolute bottom-6 left-6 right-6 bg-[#1A1C1F]/90 backdrop-blur-md p-5 rounded-xl border-2 border-[#00F6FF]/50 z-10 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                  <p className="text-xs mb-3 uppercase tracking-wider" style={{ color: '#A7AEB8' }}>Watch the Assembly</p>
+                  <p className="text-xs mb-3 uppercase tracking-wider" style={{ color: '#A7AEB8' }}>Watch the Process</p>
                   <div className="flex flex-wrap gap-2">
                     <div className="bg-[#00F6FF]/25 backdrop-blur-sm px-4 py-2 rounded-lg border border-[#00F6FF]/50 text-sm font-semibold" style={{ color: '#F5F7FA' }}>
-                      Components → Assembly → Complete Machine
+                      Real-Time Manufacturing Excellence
                     </div>
                   </div>
                 </div>
