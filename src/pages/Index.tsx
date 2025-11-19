@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import SocialProof from "@/components/SocialProof";
 import Mission from "@/components/Mission";
 import About from "@/components/About";
 import Process from "@/components/Process";
@@ -15,6 +16,7 @@ const Index = () => {
       <AnimatedBackground />
       <Header />
       <Hero />
+      <SocialProof />
       <Mission />
       <About />
       <Process />
