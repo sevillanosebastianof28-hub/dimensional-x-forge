@@ -2,41 +2,41 @@ import { MapPin, Zap, Lock, Shield, Plane, Award, Bot, Cog } from "lucide-react"
 
 const About = () => {
   return (
-    <section id="about" className="relative py-12 md:py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
+    <section id="about" className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
       {/* Background effects */}
       <div className="absolute inset-0 opacity-15" style={{
-      backgroundImage: `repeating-linear-gradient(0deg, hsl(var(--primary)) 0, hsl(var(--primary)) 1px, transparent 1px, transparent 50px),
-                           repeating-linear-gradient(90deg, hsl(var(--primary)) 0, hsl(var(--primary)) 1px, transparent 1px, transparent 50px)`,
-      backgroundSize: '50px 50px'
-    }} />
+        backgroundImage: `repeating-linear-gradient(0deg, hsl(var(--primary)) 0, hsl(var(--primary)) 1px, transparent 1px, transparent 50px),
+                         repeating-linear-gradient(90deg, hsl(var(--primary)) 0, hsl(var(--primary)) 1px, transparent 1px, transparent 50px)`,
+        backgroundSize: '50px 50px'
+      }} />
       
       {/* Security-themed gradient orbs */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/8 rounded-full blur-[150px] animate-pulse" style={{ animationDuration: '6s' }} />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-accent/8 rounded-full blur-[130px] animate-pulse" style={{ animationDuration: '7s', animationDelay: '3s' }} />
 
-      <div className="relative z-10 px-4 md:px-8">
+      <div className="relative z-10 px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16 animate-fade-in">
-          <div className="inline-block mb-4 px-4 md:px-6 py-2 bg-primary/10 border border-primary/30 rounded-full hover:bg-primary/20 transition-all duration-300">
-            <span className="text-xs md:text-sm font-bold text-primary uppercase tracking-wider">About Us</span>
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-block mb-4 px-6 py-2 bg-primary/10 border border-primary/30 rounded-full">
+            <span className="text-sm font-bold text-primary uppercase tracking-wider">About Us</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent animate-fade-in">
+          <h2 className="text-5xl font-extrabold mb-4 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent">
             Proprietary Rapid Prototyping
           </h2>
-          <p className="text-lg md:text-xl text-primary font-semibold">ITAR-Compliant and Secure Facility</p>
+          <p className="text-xl text-primary font-semibold">ITAR-Compliant and Secure Facility</p>
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mt-4" />
         </div>
 
         {/* Main Content */}
         <div className="max-w-5xl mx-auto space-y-8">
           {/* Location & Technology */}
-          <div className="bg-gradient-to-br from-black/50 to-black/30 p-4 md:p-8 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)] hover:shadow-[0_0_50px_rgba(0,255,255,0.25)] hover:scale-[1.02] transition-all duration-500 animate-fade-in cursor-pointer">
-            <div className="flex flex-col md:flex-row items-start gap-4 mb-4">
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-primary/30 hover:bg-primary/30 transition-all duration-300">
-                <MapPin className="text-primary" size={24} />
+          <div className="bg-gradient-to-br from-black/50 to-black/30 p-8 rounded-2xl border border-primary/30 backdrop-blur-sm shadow-[0_0_30px_rgba(0,255,255,0.15)] hover:shadow-[0_0_50px_rgba(0,255,255,0.25)] transition-all duration-500 animate-fade-in">
+            <div className="flex items-start gap-4 mb-4">
+              <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-primary/30">
+                <MapPin className="text-primary" size={28} />
               </div>
               <div>
-                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">Strategic Location & Proprietary Technology</h3>
+                <h3 className="text-2xl font-bold text-foreground mb-3">Strategic Location & Proprietary Technology</h3>
                 <p className="text-lg text-foreground/90 leading-relaxed mb-4">
                   Located in <span className="font-semibold text-primary">Fairview, Tennessee</span> — safely outside the Nashville metropolitan area — our facility is home to a <span className="font-bold text-foreground">proprietary rapid prototyping system</span> developed and perfected by our founding engineers.
                 </p>

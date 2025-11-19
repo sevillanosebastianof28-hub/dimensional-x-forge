@@ -89,9 +89,9 @@ const Contact = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 px-4 md:px-8">
+        <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-6 md:space-y-8 animate-fade-in">
+          <div className="space-y-8 animate-slide-in-left">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6">Get In Touch</h3>
               <p className="text-muted-foreground leading-relaxed mb-8">
