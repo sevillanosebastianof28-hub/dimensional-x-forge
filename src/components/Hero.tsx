@@ -1,4 +1,5 @@
 import MachineAssembly3D from "./MachineAssembly3D";
+import SpinningCube3D from "./SpinningCube3D";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 import logo from "@/assets/dimensionalx-logo.png";
@@ -33,12 +34,15 @@ const Hero = () => {
         <div className="flex justify-between items-center gap-16">
           {/* Text Block */}
           <div className="flex-[0_0_48%] max-w-[550px]">
-            {/* Logo - Large and Prominent */}
-            <div className="mb-10 animate-fade-in">
+            {/* Logo - Large and Prominent with Spinning Cube */}
+            <div className="mb-10 animate-fade-in flex items-center gap-4">
+              <div className="w-[120px] h-[120px]">
+                <SpinningCube3D />
+              </div>
               <img 
                 src={logo} 
                 alt="Dimensional X" 
-                className="w-[280px] h-auto drop-shadow-[0_0_30px_rgba(0,255,255,0.5)] hover:drop-shadow-[0_0_50px_rgba(0,255,255,0.7)] transition-all duration-500"
+                className="w-[560px] h-auto drop-shadow-[0_0_30px_rgba(0,255,255,0.5)] hover:drop-shadow-[0_0_50px_rgba(0,255,255,0.7)] transition-all duration-500"
               />
             </div>
             

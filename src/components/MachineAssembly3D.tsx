@@ -3,10 +3,25 @@ import { OrbitControls, Float, Environment, PerspectiveCamera } from '@react-thr
 import { Suspense, useRef, useState, useEffect } from 'react';
 import * as THREE from 'three';
 
-// Raw Material - Steel Billet (animates to base position)
-const SteelBillet = ({ targetPosition, delay }: { targetPosition: [number, number, number], delay: number }) => {
+// Animated Part Component
+const AnimatedPart = ({ 
+  targetPosition, 
+  delay, 
+  geometry, 
+  color, 
+  metalness = 0.9, 
+  roughness = 0.15,
+  startPos 
+}: { 
+  targetPosition: [number, number, number]; 
+  delay: number; 
+  geometry: JSX.Element; 
+  color: string; 
+  metalness?: number; 
+  roughness?: number;
+  startPos: [number, number, number];
+}) => {
   const meshRef = useRef<THREE.Mesh>(null);
-  const [startPos] = useState<[number, number, number]>([-6, 3, -4]);
   
   useFrame((state) => {
     if (meshRef.current) {
@@ -25,12 +40,12 @@ const SteelBillet = ({ targetPosition, delay }: { targetPosition: [number, numbe
   
   return (
     <mesh ref={meshRef} position={startPos} castShadow receiveShadow>
-      <boxGeometry args={[0.6, 0.4, 0.4]} />
+      {geometry}
       <meshStandardMaterial 
-        color="#8B9BA6"
-        metalness={0.9}
-        roughness={0.2}
-        envMapIntensity={1.5}
+        color={color}
+        metalness={metalness}
+        roughness={roughness}
+        envMapIntensity={2}
       />
     </mesh>
   );
@@ -167,87 +182,166 @@ const TablePart = ({ targetPosition, delay }: { targetPosition: [number, number,
   );
 };
 
-// Final Assembly - CNC Machine Structure
+// Realistic CNC Machine Assembly matching reference image
 const CNCMachineAssembly = () => {
   return (
     <group position={[0, 0, 0]}>
-      {/* Animated Base frame */}
-      <SteelBillet targetPosition={[0, -1.5, 0]} delay={0} />
-      <mesh position={[0, -1.5, 0]} castShadow receiveShadow>
-        <boxGeometry args={[4, 0.4, 3]} />
-        <meshStandardMaterial 
-          color="#1F1F1F"
-          metalness={0.94}
-          roughness={0.13}
-          envMapIntensity={2.2}
-        />
-      </mesh>
+      {/* Main Machine Base - Dark blue/grey body */}
+      <AnimatedPart
+        targetPosition={[0, -1.3, 0]}
+        delay={0}
+        startPos={[-6, -3, -4]}
+        geometry={<boxGeometry args={[3.8, 0.5, 3.2]} />}
+        color="#2A3C4F"
+        metalness={0.85}
+        roughness={0.2}
+      />
       
-      {/* Animated Vertical columns */}
-      <ColumnPart targetPosition={[-1.5, 0, 0]} delay={0.5} side="left" />
-      <ColumnPart targetPosition={[1.5, 0, 0]} delay={0.5} side="right" />
-      
-      {/* Animated Gantry */}
-      <AluminumBlock targetPosition={[0, 1.5, 0]} delay={1.0} />
-      <mesh position={[0, 1.5, 0]} castShadow receiveShadow>
-        <boxGeometry args={[3.6, 0.35, 0.35]} />
+      {/* Base platform */}
+      <mesh position={[0, -1.7, 0]} castShadow receiveShadow>
+        <boxGeometry args={[4.2, 0.3, 3.6]} />
         <meshStandardMaterial 
-          color="#252525"
-          metalness={0.92}
+          color="#1A1F28"
+          metalness={0.9}
           roughness={0.15}
           envMapIntensity={2}
         />
       </mesh>
       
-      {/* Animated Spindle housing */}
-      <BrassRod targetPosition={[0, 0.5, 0]} delay={1.5} />
-      <mesh position={[0, 0.5, 0]} castShadow receiveShadow>
-        <cylinderGeometry args={[0.4, 0.4, 2, 32]} />
+      {/* Left vertical column */}
+      <AnimatedPart
+        targetPosition={[-1.4, 0.2, -1.2]}
+        delay={0.3}
+        startPos={[-7, 2, -5]}
+        geometry={<boxGeometry args={[0.4, 3.5, 0.6]} />}
+        color="#374A5E"
+        metalness={0.88}
+        roughness={0.18}
+      />
+      
+      {/* Right vertical column */}
+      <AnimatedPart
+        targetPosition={[1.4, 0.2, -1.2]}
+        delay={0.3}
+        startPos={[7, 2, -5]}
+        geometry={<boxGeometry args={[0.4, 3.5, 0.6]} />}
+        color="#374A5E"
+        metalness={0.88}
+        roughness={0.18}
+      />
+      
+      {/* Rear vertical column (spindle mount) */}
+      <AnimatedPart
+        targetPosition={[0, 1.2, -1.3]}
+        delay={0.6}
+        startPos={[0, 5, -6]}
+        geometry={<boxGeometry args={[0.6, 2.5, 0.5]} />}
+        color="#2D3E51"
+        metalness={0.9}
+        roughness={0.16}
+      />
+      
+      {/* Top gantry beam */}
+      <AnimatedPart
+        targetPosition={[0, 1.9, -1.2]}
+        delay={0.9}
+        startPos={[0, 6, 0]}
+        geometry={<boxGeometry args={[3.4, 0.4, 0.5]} />}
+        color="#3A4D61"
+        metalness={0.87}
+        roughness={0.19}
+      />
+      
+      {/* Spindle assembly */}
+      <AnimatedPart
+        targetPosition={[0, 0.4, -0.8]}
+        delay={1.2}
+        startPos={[0, 4, 2]}
+        geometry={<cylinderGeometry args={[0.25, 0.25, 2.2, 32]} />}
+        color="#2F3F52"
+        metalness={0.92}
+        roughness={0.12}
+      />
+      
+      {/* Tool holder cone */}
+      <mesh position={[0, -0.7, -0.8]} castShadow receiveShadow rotation={[0, 0, Math.PI]}>
+        <coneGeometry args={[0.2, 0.8, 32]} />
         <meshStandardMaterial 
-          color="#1A1A1A"
-          metalness={0.95}
-          roughness={0.11}
-          envMapIntensity={2.3}
+          color="#3D5066"
+          metalness={0.94}
+          roughness={0.1}
+          envMapIntensity={2.2}
         />
       </mesh>
       
-      {/* Tool holder on spindle */}
-      <mesh position={[0, -0.5, 0]} castShadow receiveShadow rotation={[0, 0, Math.PI]}>
-        <coneGeometry args={[0.3, 1, 32]} />
-        <meshStandardMaterial 
-          color="#303030"
-          metalness={0.93}
-          roughness={0.14}
-          envMapIntensity={2.1}
-        />
-      </mesh>
+      {/* Glass front panel */}
+      <AnimatedPart
+        targetPosition={[0, 0.3, 0.6]}
+        delay={1.5}
+        startPos={[-5, 3, 5]}
+        geometry={<boxGeometry args={[2.8, 2.4, 0.08]} />}
+        color="#4A7A9E"
+        metalness={0.95}
+        roughness={0.05}
+      />
       
-      {/* Animated Work table */}
-      <TablePart targetPosition={[0, -1.1, 0.3]} delay={2.0} />
+      {/* Work table inside */}
+      <AnimatedPart
+        targetPosition={[0, -0.6, 0]}
+        delay={1.8}
+        startPos={[5, -2, 4]}
+        geometry={<boxGeometry args={[2.2, 0.15, 1.8]} />}
+        color="#3B4E63"
+        metalness={0.88}
+        roughness={0.2}
+      />
       
-      {/* T-slots on table */}
-      {[-0.8, 0, 0.8].map((x, i) => (
-        <mesh key={i} position={[x, -1, 0.3]} castShadow receiveShadow>
-          <boxGeometry args={[0.08, 0.22, 2]} />
+      {/* T-slots on work table */}
+      {[-0.6, 0, 0.6].map((x, i) => (
+        <mesh key={i} position={[x, -0.52, 0]} castShadow receiveShadow>
+          <boxGeometry args={[0.06, 0.16, 1.8]} />
           <meshStandardMaterial 
-            color="#151515"
-            metalness={0.96}
-            roughness={0.09}
-            envMapIntensity={2.4}
+            color="#1E2A36"
+            metalness={0.95}
+            roughness={0.1}
+            envMapIntensity={2.3}
           />
         </mesh>
       ))}
       
-      {/* Control panel accent */}
-      <mesh position={[1.8, 0, 1.2]} castShadow receiveShadow>
-        <boxGeometry args={[0.6, 1, 0.1]} />
+      {/* Control panel on right side */}
+      <AnimatedPart
+        targetPosition={[1.6, 0.2, 0.8]}
+        delay={2.1}
+        startPos={[6, 2, 6]}
+        geometry={<boxGeometry args={[0.5, 1.2, 0.12]} />}
+        color="#1A1F28"
+        metalness={0.7}
+        roughness={0.3}
+      />
+      
+      {/* Control panel screen */}
+      <mesh position={[1.65, 0.2, 0.8]} castShadow receiveShadow>
+        <boxGeometry args={[0.45, 0.8, 0.02]} />
         <meshStandardMaterial 
-          color="#00CCCC"
-          metalness={0.7}
-          roughness={0.3}
+          color="#0A4F6E"
+          metalness={0.6}
+          roughness={0.4}
           envMapIntensity={1.5}
-          emissive="#00CCCC"
-          emissiveIntensity={0.3}
+          emissive="#0A4F6E"
+          emissiveIntensity={0.2}
+        />
+      </mesh>
+      
+      {/* Small accent lights */}
+      <mesh position={[-0.8, 1.8, 0.7]} castShadow receiveShadow>
+        <cylinderGeometry args={[0.05, 0.05, 0.1, 16]} />
+        <meshStandardMaterial 
+          color="#00A8CC"
+          metalness={0.8}
+          roughness={0.2}
+          emissive="#00A8CC"
+          emissiveIntensity={0.4}
         />
       </mesh>
     </group>
