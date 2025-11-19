@@ -1,7 +1,7 @@
 import MachineAssembly3D from "./MachineAssembly3D";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
-import logo from "@/assets/dimensionalx-logo.png";
+import logo from "@/assets/dimensionalx-new-logo.png";
 import cube from "@/assets/cube-spinning.png";
 
 const Hero = () => {
