@@ -1,7 +1,7 @@
 import MachineAssembly3D from "./MachineAssembly3D";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
-import logo from "@/assets/dimensionalx-logo.png";
+import logoText from "@/assets/dimensionalx-new-logo.png";
 import logoCube from "@/assets/logo-3d.png";
 
 const Hero = () => {
@@ -42,18 +42,18 @@ const Hero = () => {
         <div className="flex justify-between items-start gap-20">
           {/* Text Block */}
           <div className="flex-[0_0_45%] max-w-[580px]">
-            {/* Logo - Cube rotates, text stays static */}
-            <div className="mb-12 animate-fade-in relative">
-              <div className="flex items-center gap-6">
+            {/* Logo - Only cube rotates, text stays static */}
+            <div className="mb-12 animate-fade-in">
+              <div className="flex items-center gap-4">
                 <img 
                   src={logoCube} 
                   alt="Dimensional X Cube" 
-                  className="w-[120px] h-[120px] drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] animate-[spin_8s_linear_infinite]"
+                  className="w-[90px] h-[90px] drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] animate-[spin_8s_linear_infinite]"
                 />
                 <img 
-                  src={logo} 
+                  src={logoText} 
                   alt="Dimensional X" 
-                  className="w-[450px] h-auto drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] hover:drop-shadow-[0_0_60px_rgba(0,246,255,0.9)] transition-all duration-500"
+                  className="w-[480px] h-auto drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] hover:drop-shadow-[0_0_60px_rgba(0,246,255,0.9)] transition-all duration-500"
                 />
               </div>
             </div>
