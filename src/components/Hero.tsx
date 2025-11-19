@@ -41,19 +41,19 @@ const Hero = () => {
       <div className="relative z-[2] py-16 px-[70px] bg-gradient-to-br from-[#1A1C1F]/90 via-[#2A2D33]/85 to-[#1A1C1F]/90 rounded-[24px] border border-[#00F6FF]/50 shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] backdrop-blur-md">
         <div className="flex justify-between items-start gap-20">
           {/* Text Block */}
-          <div className="flex-[0_0_45%] max-w-[580px]">
+          <div className="flex-[0_0_48%] max-w-none">
             {/* Logo with spinning cube */}
-            <div className="mb-12 animate-fade-in">
-              <div className="flex items-center gap-6">
+            <div className="mb-16 animate-fade-in">
+              <div className="flex items-center gap-8">
                 <img 
                   src={cube} 
                   alt="Dimensional X Cube" 
-                  className="w-[120px] h-auto animate-[spin_8s_linear_infinite] drop-shadow-[0_0_40px_rgba(0,246,255,0.6)]"
+                  className="w-[140px] h-auto flex-shrink-0 animate-[spin_8s_linear_infinite] drop-shadow-[0_0_40px_rgba(0,246,255,0.6)]"
                 />
                 <img 
                   src={logo} 
                   alt="Dimensional X" 
-                  className="w-[500px] h-auto drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] hover:drop-shadow-[0_0_60px_rgba(0,246,255,0.9)] transition-all duration-500"
+                  className="w-full max-w-[550px] h-auto drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] hover:drop-shadow-[0_0_60px_rgba(0,246,255,0.9)] transition-all duration-500"
                 />
               </div>
             </div>
