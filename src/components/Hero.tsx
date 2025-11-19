@@ -16,59 +16,69 @@ const Hero = () => {
 
   return <main id="hero" className="relative py-20 px-0 overflow-hidden max-w-[1360px] mx-auto">
       {/* Animated Grid Background */}
-      <div className="absolute inset-0 opacity-20 z-[1] animate-pulse" style={{
-      backgroundImage: `repeating-linear-gradient(0deg, hsl(var(--grid-color)) 0, hsl(var(--grid-color)) 1px, transparent 1px, transparent 30px),
-                           repeating-linear-gradient(90deg, hsl(var(--grid-color)) 0, hsl(var(--grid-color)) 1px, transparent 1px, transparent 30px)`,
-      backgroundSize: '30px 30px'
+      <div className="absolute inset-0 opacity-30 z-[1]" style={{
+      backgroundImage: `repeating-linear-gradient(0deg, #00F6FF 0, #00F6FF 1px, transparent 1px, transparent 30px),
+                           repeating-linear-gradient(90deg, #00F6FF 0, #00F6FF 1px, transparent 1px, transparent 30px)`,
+      backgroundSize: '30px 30px',
+      animation: 'pulse 4s ease-in-out infinite'
     }} />
 
       {/* Radial gradient overlay for depth */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-br from-[#00A8CC]/10 via-transparent to-[#00F6FF]/10 pointer-events-none" />
       
       {/* Glowing orbs for ambiance */}
-      <div className="absolute top-20 -left-20 w-64 h-64 bg-primary/20 rounded-full blur-[100px] z-[1] animate-pulse" />
-      <div className="absolute bottom-20 -right-20 w-80 h-80 bg-accent/15 rounded-full blur-[120px] z-[1] animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute top-20 -left-20 w-96 h-96 bg-[#00F6FF]/20 rounded-full blur-[120px] z-[1] animate-pulse" />
+      <div className="absolute bottom-20 -right-20 w-96 h-96 bg-[#00A8CC]/15 rounded-full blur-[140px] z-[1] animate-pulse" style={{ animationDelay: '1.5s' }} />
+      
+      {/* Cyan particles effect */}
+      <div className="absolute inset-0 z-[1] opacity-40 pointer-events-none" style={{
+        background: 'radial-gradient(circle at 20% 30%, #00F6FF 0%, transparent 2%), radial-gradient(circle at 80% 70%, #00A8CC 0%, transparent 2%), radial-gradient(circle at 40% 80%, #00F6FF 0%, transparent 1.5%)',
+        backgroundSize: '200px 200px, 150px 150px, 180px 180px',
+        animation: 'float 20s ease-in-out infinite'
+      }} />
 
       {/* Main Content Container */}
-      <div className="relative z-[2] py-12 px-[70px] bg-gradient-to-br from-black/60 via-black/50 to-black/40 rounded-[24px] border border-primary/40 shadow-[0_0_40px_rgba(0,255,255,0.3),0_0_80px_rgba(0,255,255,0.1)] backdrop-blur-sm">
-        <div className="flex justify-between items-center gap-16">
+      <div className="relative z-[2] py-16 px-[70px] bg-gradient-to-br from-[#1A1C1F]/90 via-[#2A2D33]/85 to-[#1A1C1F]/90 rounded-[24px] border border-[#00F6FF]/50 shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] backdrop-blur-md">
+        <div className="flex justify-between items-start gap-20">
           {/* Text Block */}
-          <div className="flex-[0_0_48%] max-w-[550px]">
-            {/* Logo - Large and Prominent with Orbiting Cube */}
-            <div className="mb-10 animate-fade-in flex items-start gap-6">
-              <div className="w-[100px] h-[100px] flex-shrink-0">
+          <div className="flex-[0_0_45%] max-w-[580px]">
+            {/* Logo - Large and Prominent with Rotating Cube */}
+            <div className="mb-12 animate-fade-in flex items-center gap-8">
+              <div className="w-[140px] h-[140px] flex-shrink-0 relative">
+                <div className="absolute inset-0 bg-[#00F6FF]/20 rounded-lg blur-xl"></div>
                 <SpinningCube3D />
               </div>
               <img 
                 src={logo} 
                 alt="Dimensional X" 
-                className="w-[480px] h-auto mt-2 drop-shadow-[0_0_30px_rgba(0,255,255,0.5)] hover:drop-shadow-[0_0_50px_rgba(0,255,255,0.7)] transition-all duration-500 animate-[spin_8s_linear_infinite]"
+                className="w-[560px] h-auto drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] hover:drop-shadow-[0_0_60px_rgba(0,246,255,0.9)] transition-all duration-500"
               />
             </div>
             
-            <div className="mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              <h1 className="text-[3.5rem] font-extrabold leading-[1.1] mb-4 text-foreground">
-                High-Precision Parts. Fast Turnaround. Reliable Every Time.
+            <div className="mb-10 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <h1 className="text-[3.8rem] font-extrabold leading-[1.05] mb-6" style={{ color: '#F5F7FA' }}>
+                High-Precision Parts. Fast Turnaround. Zero Compromise.
               </h1>
-              <p className="text-xl text-secondary-foreground leading-relaxed mb-3">
-                Dimensional X delivers CNC-manufactured components with precision tolerances, consistent quality, and dependable lead times — built for engineers, designers, and global manufacturing teams.
+              <p className="text-[1.3rem] leading-relaxed mb-4" style={{ color: '#E3EAF0' }}>
+                Dimensional X delivers CNC-manufactured components with tight tolerances, dependable lead times, and consistent quality — trusted by engineers, product teams, and manufacturers who need accuracy without delays or risk.
               </p>
             </div>
             
-            <div className="flex gap-4 animate-scale-in" style={{ animationDelay: '0.2s' }}>
+            <div className="flex gap-5 animate-scale-in" style={{ animationDelay: '0.2s' }}>
               <Button 
                 size="lg" 
                 onClick={() => navigate("/request-quote")}
-                className="px-10 py-7 text-lg font-extrabold bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_30px_rgba(0,255,255,0.5)] hover:shadow-[0_0_60px_rgba(0,255,255,0.9)] transition-all duration-300 hover:scale-110 relative overflow-hidden group"
+                className="px-12 py-8 text-[1.15rem] font-extrabold bg-[#00F6FF] text-[#1A1C1F] hover:bg-[#00A8CC] shadow-[0_0_40px_rgba(0,246,255,0.6),0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_70px_rgba(0,246,255,0.9),0_6px_30px_rgba(0,0,0,0.4)] transition-all duration-300 hover:scale-105 relative overflow-hidden group border-2 border-[#00F6FF]/50"
               >
                 <span className="relative z-10">Upload Your Drawing for a Fast Quote</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline"
                 onClick={() => scrollToSection('machines')}
-                className="px-8 py-7 text-lg font-bold border-2 border-primary/60 bg-background/40 text-foreground hover:bg-primary/15 hover:border-primary hover:text-foreground transition-all duration-300 hover:scale-105"
+                className="px-10 py-8 text-[1.15rem] font-bold border-2 border-[#00F6FF]/70 bg-[#2A2D33]/60 hover:bg-[#00F6FF]/20 hover:border-[#00F6FF] transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(0,246,255,0.3)]"
+                style={{ color: '#F5F7FA' }}
               >
                 See Our Capabilities
               </Button>
@@ -76,26 +86,26 @@ const Hero = () => {
           </div>
 
           {/* 3D Visual Block */}
-          <div className="flex-[0_0_48%] relative">
+          <div className="flex-[0_0_52%] relative">
             <div className="relative group">
               {/* Outer glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-2xl blur-3xl group-hover:blur-[80px] transition-all duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00F6FF]/40 to-[#00A8CC]/30 rounded-2xl blur-[100px] group-hover:blur-[120px] transition-all duration-700" />
               
               {/* 3D Canvas Container */}
-              <div className="relative bg-gradient-to-br from-black/70 to-black/50 p-6 rounded-2xl border border-primary/40 backdrop-blur-sm shadow-[0_0_50px_rgba(0,255,255,0.3)] group-hover:shadow-[0_0_80px_rgba(0,255,255,0.5)] transition-all duration-500 h-[600px] animate-scale-in" style={{ animationDelay: '0.3s' }}>
+              <div className="relative bg-gradient-to-br from-[#1A1C1F]/80 to-[#2A2D33]/70 p-8 rounded-2xl border-2 border-[#00F6FF]/60 backdrop-blur-md shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] group-hover:shadow-[0_0_90px_rgba(0,246,255,0.6),0_0_140px_rgba(0,168,204,0.3)] transition-all duration-500 h-[650px] animate-scale-in" style={{ animationDelay: '0.3s' }}>
                 <MachineAssembly3D />
                 
                 {/* Overlay labels */}
-                <div className="absolute top-4 left-4 bg-black/90 backdrop-blur-md px-5 py-3 rounded-lg border border-primary/60 z-10 animate-fade-in shadow-[0_0_20px_rgba(0,255,255,0.3)]" style={{ animationDelay: '0.4s' }}>
-                  <p className="text-xs text-muted-foreground mb-1 uppercase tracking-wide">Realistic 3D Assembly</p>
-                  <p className="text-sm font-bold text-primary">Precision CNC Manufacturing</p>
+                <div className="absolute top-6 left-6 bg-[#1A1C1F]/95 backdrop-blur-md px-6 py-4 rounded-xl border-2 border-[#00F6FF]/70 z-10 animate-fade-in shadow-[0_0_30px_rgba(0,246,255,0.4)]" style={{ animationDelay: '0.4s' }}>
+                  <p className="text-xs mb-1 uppercase tracking-wider" style={{ color: '#A7AEB8' }}>Assembly Visualization</p>
+                  <p className="text-base font-bold" style={{ color: '#00F6FF' }}>Precision CNC Machining Center</p>
                 </div>
                 
-                <div className="absolute bottom-4 left-4 right-4 bg-black/85 backdrop-blur-md p-4 rounded-lg border border-primary/40 z-10 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-                  <p className="text-xs text-muted-foreground mb-2 uppercase tracking-wide">Featured Components</p>
+                <div className="absolute bottom-6 left-6 right-6 bg-[#1A1C1F]/90 backdrop-blur-md p-5 rounded-xl border-2 border-[#00F6FF]/50 z-10 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                  <p className="text-xs mb-3 uppercase tracking-wider" style={{ color: '#A7AEB8' }}>Watch the Assembly</p>
                   <div className="flex flex-wrap gap-2">
-                    <div className="bg-primary/20 backdrop-blur-sm px-3 py-1.5 rounded-md border border-primary/40 text-xs text-foreground font-medium">
-                      Raw Materials → Sub-Assemblies → Final Machine
+                    <div className="bg-[#00F6FF]/25 backdrop-blur-sm px-4 py-2 rounded-lg border border-[#00F6FF]/50 text-sm font-semibold" style={{ color: '#F5F7FA' }}>
+                      Components → Assembly → Complete Machine
                     </div>
                   </div>
                 </div>
@@ -103,18 +113,18 @@ const Hero = () => {
             </div>
             
             {/* Technical Specifications */}
-            <div className="mt-6 grid grid-cols-3 gap-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-              <div className="bg-black/50 backdrop-blur-sm p-4 rounded-lg border border-primary/30 hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 group">
-                <div className="text-2xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform duration-300">±0.001"</div>
-                <div className="text-xs text-secondary-foreground">Tolerance</div>
+            <div className="mt-8 grid grid-cols-3 gap-5 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+              <div className="bg-[#2A2D33]/70 backdrop-blur-md p-6 rounded-xl border-2 border-[#00F6FF]/40 hover:border-[#00F6FF]/80 hover:bg-[#00F6FF]/10 transition-all duration-300 group shadow-[0_0_20px_rgba(0,246,255,0.2)]">
+                <div className="text-3xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300" style={{ color: '#00F6FF' }}>±0.001"</div>
+                <div className="text-sm font-medium" style={{ color: '#A7AEB8' }}>Tight Tolerance</div>
               </div>
-              <div className="bg-black/50 backdrop-blur-sm p-4 rounded-lg border border-primary/30 hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 group">
-                <div className="text-2xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform duration-300">5-Axis</div>
-                <div className="text-xs text-secondary-foreground">Machining</div>
+              <div className="bg-[#2A2D33]/70 backdrop-blur-md p-6 rounded-xl border-2 border-[#00F6FF]/40 hover:border-[#00F6FF]/80 hover:bg-[#00F6FF]/10 transition-all duration-300 group shadow-[0_0_20px_rgba(0,246,255,0.2)]">
+                <div className="text-3xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300" style={{ color: '#00F6FF' }}>5-Axis</div>
+                <div className="text-sm font-medium" style={{ color: '#A7AEB8' }}>Advanced CNC</div>
               </div>
-              <div className="bg-black/50 backdrop-blur-sm p-4 rounded-lg border border-primary/30 hover:border-primary/60 hover:bg-primary/5 transition-all duration-300 group">
-                <div className="text-2xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform duration-300">24/7</div>
-                <div className="text-xs text-secondary-foreground">Production</div>
+              <div className="bg-[#2A2D33]/70 backdrop-blur-md p-6 rounded-xl border-2 border-[#00F6FF]/40 hover:border-[#00F6FF]/80 hover:bg-[#00F6FF]/10 transition-all duration-300 group shadow-[0_0_20px_rgba(0,246,255,0.2)]">
+                <div className="text-3xl font-bold mb-2 group-hover:scale-110 transition-transform duration-300" style={{ color: '#00F6FF' }}>Fast</div>
+                <div className="text-sm font-medium" style={{ color: '#A7AEB8' }}>Turnaround</div>
               </div>
             </div>
           </div>
