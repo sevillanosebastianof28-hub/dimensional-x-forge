@@ -102,7 +102,8 @@ const Hero = () => {
                   loop
                   muted
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover rounded-lg z-0"
+                  className="w-full h-full object-cover rounded-2xl"
+                  style={{ position: 'absolute', top: 0, left: 0, zIndex: 0 }}
                 />
                 
                 {/* Overlay labels */}
