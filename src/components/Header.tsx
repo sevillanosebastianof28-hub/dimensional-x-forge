@@ -28,12 +28,12 @@ const Header = () => {
           <img 
             src={cube} 
             alt="Dimensional X Cube" 
-            className="h-10 w-auto animate-[spin_8s_linear_infinite]"
+            className="h-14 w-auto animate-[spin_8s_linear_infinite]"
           />
           <img 
             src={logo} 
             alt="DimensionalX - Your Prototype Partner" 
-            className="h-12 w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
         </div>
         
