@@ -73,7 +73,7 @@ const Hero = () => {
                 onClick={() => navigate("/request-quote")}
                 className="px-12 py-8 text-[1.15rem] font-extrabold bg-[#00F6FF] text-[#1A1C1F] hover:bg-[#00A8CC] shadow-[0_0_40px_rgba(0,246,255,0.6),0_4px_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_70px_rgba(0,246,255,0.9),0_6px_30px_rgba(0,0,0,0.4)] transition-all duration-300 hover:scale-105 relative overflow-hidden group border-2 border-[#00F6FF]/50"
               >
-                <span className="relative z-10">Upload Your Drawing for a Fast Quote</span>
+                <span className="relative z-10">Fast Quotation</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
               </Button>
               <Button 
