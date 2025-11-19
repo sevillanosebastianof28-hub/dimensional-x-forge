@@ -2,6 +2,7 @@ import MachineAssembly3D from "./MachineAssembly3D";
 import { Button } from "./ui/button";
 import { useNavigate } from "react-router-dom";
 import logo from "@/assets/dimensionalx-logo.png";
+import logoCube from "@/assets/logo-3d.png";
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -41,12 +42,17 @@ const Hero = () => {
         <div className="flex justify-between items-start gap-20">
           {/* Text Block */}
           <div className="flex-[0_0_45%] max-w-[580px]">
-            {/* Logo - Large and Prominent */}
-            <div className="mb-12 animate-fade-in">
+            {/* Logo - Cube rotates, text stays static */}
+            <div className="mb-12 animate-fade-in flex items-center gap-4">
+              <img 
+                src={logoCube} 
+                alt="Dimensional X Cube" 
+                className="w-[80px] h-[80px] drop-shadow-[0_0_30px_rgba(0,246,255,0.6)] animate-[spin_8s_linear_infinite]"
+              />
               <img 
                 src={logo} 
                 alt="Dimensional X" 
-                className="w-[560px] h-auto drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] hover:drop-shadow-[0_0_60px_rgba(0,246,255,0.9)] transition-all duration-500 animate-[spin_8s_linear_infinite]"
+                className="h-[70px] w-auto drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] hover:drop-shadow-[0_0_60px_rgba(0,246,255,0.9)] transition-all duration-500"
               />
             </div>
             
