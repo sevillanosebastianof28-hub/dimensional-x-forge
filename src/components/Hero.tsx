@@ -34,15 +34,15 @@ const Hero = () => {
         <div className="flex justify-between items-center gap-16">
           {/* Text Block */}
           <div className="flex-[0_0_48%] max-w-[550px]">
-            {/* Logo - Large and Prominent with Spinning Cube */}
-            <div className="mb-10 animate-fade-in flex items-center gap-4">
-              <div className="w-[120px] h-[120px]">
+            {/* Logo - Large and Prominent with Orbiting Cube */}
+            <div className="mb-10 animate-fade-in flex items-start gap-6">
+              <div className="w-[100px] h-[100px] flex-shrink-0">
                 <SpinningCube3D />
               </div>
               <img 
                 src={logo} 
                 alt="Dimensional X" 
-                className="w-[560px] h-auto drop-shadow-[0_0_30px_rgba(0,255,255,0.5)] hover:drop-shadow-[0_0_50px_rgba(0,255,255,0.7)] transition-all duration-500"
+                className="w-[480px] h-auto mt-2 drop-shadow-[0_0_30px_rgba(0,255,255,0.5)] hover:drop-shadow-[0_0_50px_rgba(0,255,255,0.7)] transition-all duration-500"
               />
             </div>
             
