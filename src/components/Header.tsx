@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import logo from "@/assets/cube_logo.png";
+import logo from "@/assets/text_logo.png";
+import cube from "@/assets/cube-new.png";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -24,6 +25,11 @@ const Header = () => {
     <header className={`flex justify-between items-center py-5 px-4 border-b border-border sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${scrolled ? 'bg-background/98 shadow-[0_0_30px_rgba(0,255,255,0.2)]' : 'bg-background/95'}`}>
       <div className="flex items-center gap-4 max-w-[1360px] mx-auto w-full">
         <div className="flex items-center gap-4 flex-1">
+          <img 
+            src={cube} 
+            alt="Dimensional X Cube" 
+            className="h-10 w-auto animate-[spin_8s_linear_infinite]"
+          />
           <img 
             src={logo} 
             alt="DimensionalX - Your Prototype Partner" 
