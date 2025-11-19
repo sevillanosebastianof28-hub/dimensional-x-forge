@@ -42,7 +42,7 @@ const Hero = () => {
               <img 
                 src={logo} 
                 alt="Dimensional X" 
-                className="w-[480px] h-auto mt-2 drop-shadow-[0_0_30px_rgba(0,255,255,0.5)] hover:drop-shadow-[0_0_50px_rgba(0,255,255,0.7)] transition-all duration-500"
+                className="w-[480px] h-auto mt-2 drop-shadow-[0_0_30px_rgba(0,255,255,0.5)] hover:drop-shadow-[0_0_50px_rgba(0,255,255,0.7)] transition-all duration-500 animate-[spin_8s_linear_infinite]"
               />
             </div>
             
