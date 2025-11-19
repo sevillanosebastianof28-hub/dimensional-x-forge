@@ -14,7 +14,7 @@ const Hero = () => {
     }
   };
 
-  return <main id="hero" className="relative py-20 px-4 overflow-hidden max-w-[1400px] mx-auto">
+  return <main id="hero" className="relative py-20 px-4 overflow-hidden max-w-[1440px] mx-auto">
       {/* Animated Grid Background */}
       <div className="absolute inset-0 opacity-30 z-[1]" style={{
       backgroundImage: `repeating-linear-gradient(0deg, #00F6FF 0, #00F6FF 1px, transparent 1px, transparent 30px),
@@ -95,14 +95,14 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-[#00F6FF]/40 to-[#00A8CC]/30 rounded-2xl blur-[100px] group-hover:blur-[120px] transition-all duration-700" />
               
               {/* Video Container */}
-              <div className="relative bg-gradient-to-br from-[#1A1C1F]/80 to-[#2A2D33]/70 p-10 rounded-2xl border-2 border-[#00F6FF]/60 backdrop-blur-md shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] group-hover:shadow-[0_0_90px_rgba(0,246,255,0.6),0_0_140px_rgba(0,168,204,0.3)] transition-all duration-500 h-[600px] animate-scale-in overflow-hidden" style={{ animationDelay: '0.3s' }}>
+              <div className="relative bg-gradient-to-br from-[#1A1C1F]/80 to-[#2A2D33]/70 p-10 rounded-2xl border-2 border-[#00F6FF]/60 backdrop-blur-md shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] group-hover:shadow-[0_0_90px_rgba(0,246,255,0.6),0_0_140px_rgba(0,168,204,0.3)] transition-all duration-500 h-[640px] animate-scale-in overflow-hidden" style={{ animationDelay: '0.3s' }}>
                 <video 
                   src={machineVideo}
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover rounded-lg"
+                  className="w-full h-full object-contain rounded-lg"
                 />
                 
                 {/* Overlay labels */}
