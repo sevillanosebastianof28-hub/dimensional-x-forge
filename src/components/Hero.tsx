@@ -60,10 +60,10 @@ const Hero = () => {
             
             <div className="mb-10 animate-fade-in" style={{ animationDelay: '0.1s' }}>
               <h1 className="text-[3.8rem] font-extrabold leading-[1.05] mb-6" style={{ color: '#F5F7FA' }}>
-                High-Precision Parts. Fast Turnaround. Zero Compromise.
+                Your Program-Critical Parts. Delivered On-Time, Every Time.
               </h1>
               <p className="text-[1.3rem] leading-relaxed mb-4" style={{ color: '#E3EAF0' }}>
-                Dimensional X delivers CNC-manufactured components with tight tolerances, dependable lead times, and consistent quality — trusted by engineers, product teams, and manufacturers who need accuracy without delays or risk.
+                When your product launch, defense contract, or prototype deadline is non-negotiable, Dimensional X delivers. ITAR-compliant facility, proven ±0.005mm tolerances across 500+ completed projects, and 98% on-time delivery rate—because your reputation depends on ours.
               </p>
             </div>
             
