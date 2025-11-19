@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
-import logo from "@/assets/text_logo.png";
+import logo from "@/assets/cube_logo-2.png";
 import cube from "@/assets/cube-new.png";
 
 const Header = () => {
