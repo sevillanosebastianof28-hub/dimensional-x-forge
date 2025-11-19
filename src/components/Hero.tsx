@@ -38,7 +38,7 @@ const Hero = () => {
       }} />
 
       {/* Main Content Container */}
-      <div className="relative z-[2] py-16 px-[70px] bg-gradient-to-br from-[#1A1C1F]/90 via-[#2A2D33]/85 to-[#1A1C1F]/90 rounded-[24px] border border-[#00F6FF]/50 shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] backdrop-blur-md">
+      <div className="relative z-[2] py-16 px-[60px] bg-gradient-to-br from-[#1A1C1F]/90 via-[#2A2D33]/85 to-[#1A1C1F]/90 rounded-[24px] border border-[#00F6FF]/50 shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] backdrop-blur-md">
         <div className="flex justify-between items-start gap-16">
           {/* Text Block */}
           <div className="flex-[0_0_45%]">
@@ -95,7 +95,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-[#00F6FF]/40 to-[#00A8CC]/30 rounded-2xl blur-[100px] group-hover:blur-[120px] transition-all duration-700" />
               
               {/* Video Container */}
-              <div className="relative bg-gradient-to-br from-[#1A1C1F]/80 to-[#2A2D33]/70 p-12 rounded-2xl border-2 border-[#00F6FF]/60 backdrop-blur-md shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] group-hover:shadow-[0_0_90px_rgba(0,246,255,0.6),0_0_140px_rgba(0,168,204,0.3)] transition-all duration-500 h-[650px] animate-scale-in overflow-hidden" style={{ animationDelay: '0.3s' }}>
+              <div className="relative bg-gradient-to-br from-[#1A1C1F]/80 to-[#2A2D33]/70 p-10 rounded-2xl border-2 border-[#00F6FF]/60 backdrop-blur-md shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] group-hover:shadow-[0_0_90px_rgba(0,246,255,0.6),0_0_140px_rgba(0,168,204,0.3)] transition-all duration-500 h-[580px] animate-scale-in overflow-hidden" style={{ animationDelay: '0.3s' }}>
                 <video 
                   src={machineVideo}
                   autoPlay
