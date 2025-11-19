@@ -39,21 +39,21 @@ const Hero = () => {
 
       {/* Main Content Container */}
       <div className="relative z-[2] py-16 px-[70px] bg-gradient-to-br from-[#1A1C1F]/90 via-[#2A2D33]/85 to-[#1A1C1F]/90 rounded-[24px] border border-[#00F6FF]/50 shadow-[0_0_60px_rgba(0,246,255,0.4),0_0_100px_rgba(0,168,204,0.2)] backdrop-blur-md">
-        <div className="flex justify-between items-start gap-20">
+        <div className="flex justify-between items-start gap-16">
           {/* Text Block */}
-          <div className="flex-[0_0_48%] max-w-none">
+          <div className="flex-[0_0_45%]">
             {/* Logo with spinning cube */}
             <div className="mb-16 animate-fade-in">
-              <div className="flex items-center gap-8">
+              <div className="flex items-center gap-6">
                 <img 
                   src={cube} 
                   alt="Dimensional X Cube" 
-                  className="w-[140px] h-auto flex-shrink-0 animate-[spin_8s_linear_infinite] drop-shadow-[0_0_40px_rgba(0,246,255,0.6)]"
+                  className="w-[130px] h-auto flex-shrink-0 animate-[spin_8s_linear_infinite] drop-shadow-[0_0_40px_rgba(0,246,255,0.6)]"
                 />
                 <img 
                   src={logo} 
                   alt="Dimensional X" 
-                  className="w-full max-w-[550px] h-auto drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] hover:drop-shadow-[0_0_60px_rgba(0,246,255,0.9)] transition-all duration-500"
+                  className="w-[480px] h-auto flex-shrink-0 drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] hover:drop-shadow-[0_0_60px_rgba(0,246,255,0.9)] transition-all duration-500"
                 />
               </div>
             </div>
@@ -89,7 +89,7 @@ const Hero = () => {
           </div>
 
           {/* Video Visual Block */}
-          <div className="flex-[0_0_52%] relative">
+          <div className="flex-[0_0_55%] relative">
             <div className="relative group">
               {/* Outer glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#00F6FF]/40 to-[#00A8CC]/30 rounded-2xl blur-[100px] group-hover:blur-[120px] transition-all duration-700" />
