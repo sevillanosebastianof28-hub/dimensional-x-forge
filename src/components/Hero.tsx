@@ -53,7 +53,7 @@ const Hero = () => {
                 <img 
                   src={logo} 
                   alt="Dimensional X" 
-                  className="w-[500px] h-auto drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] hover:drop-shadow-[0_0_60px_rgba(0,246,255,0.9)] transition-all duration-500"
+                  className="w-[380px] h-auto drop-shadow-[0_0_40px_rgba(0,246,255,0.6)] hover:drop-shadow-[0_0_60px_rgba(0,246,255,0.9)] transition-all duration-500"
                 />
               </div>
             </div>
