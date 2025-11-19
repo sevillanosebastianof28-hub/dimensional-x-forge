@@ -9,28 +9,29 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 10%;
-    --foreground: 0 0% 100%;
+    --foreground: 210 20% 96%;  /* Soft white instead of pure white */
 
     --card: 0 0% 10%;
-    --card-foreground: 0 0% 100%;
+    --card-foreground: 210 20% 96%;
 
     --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 100%;
+    --popover-foreground: 210 20% 96%;
 
-    --primary: 180 100% 50%;
+    --primary: 180 100% 50%;  /* Cyan/Electric blue */
     --primary-foreground: 0 0% 10%;
+    --primary-glow: 180 100% 70%;  /* Lighter cyan for glows */
 
     --secondary: 0 0% 20%;
-    --secondary-foreground: 0 0% 80%;
+    --secondary-foreground: 210 15% 88%;  /* Soft grey-white */
 
     --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 80%;
+    --muted-foreground: 210 15% 88%;
 
     --accent: 180 100% 50%;
     --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 210 20% 96%;
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
@@ -41,6 +42,17 @@ All colors MUST be HSL.
     /* Custom tokens */
     --grid-color: 0 0% 20%;
     --outer-bg: 0 0% 83%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%), hsl(180 100% 70%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 10%), hsl(0 0% 8%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(180 100% 50% / 0.3);
+    --shadow-glow: 0 0 40px hsl(180 100% 70% / 0.4);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
